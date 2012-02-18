@@ -1,0 +1,104 @@
+Family Map - Community Edition - Installation Instructions
+
+Pre-requisites
+--------------
+LAMP stack web server (Linux, Apache, MySql, PHP) PHP at >= V5.3
+
+Installation
+------------
+1/ Unarchive the distribution pack to a convenient location on your web server
+
+2/ Create a database and database owner user with all access rights to the
+   database in MySql
+
+3/ Using your MySql admin account that has ALL rights, change to your new
+   database and run the docs/database.sql file to create the tables,
+   stored procedures  and base data
+
+4/ Create a random crypto seed string of your choice.  uuidgen is a program that
+   can be found for most platforms and easily creates a unique string. In a
+   linux terminal for instance type
+   uuidgen
+   and use the resulting hash string.  Record the string and don't lose it.  All
+   system passwords are hashed with this string, so once set and used it cannot 
+   be changed.
+
+5/ As database admin, change to your family map database and run the following
+   sql command:
+
+INSERT INTO `systUser` (`id`, `orgId`, `uName`, `uEmail`, `payrollId`, `uPwd`, `rowSts`, `lastLogon`, `lastIP`, `addDt`, `prsnId`) VALUES
+(1, 1, '<your admin username>', '<your email address>', '0000', md5(concat("<your crypto seed>","<your password>")), 'active', '2012-01-01 00:00:00', '', '0000-00-00 00:00:00', NULL);
+
+   replacing <your admin username>, <your email address>, <your crypto seed> 
+   and <your password> with the appropriate values.
+
+6/ Copy or soft link the application/config/fmlymap.apache.conf to your Apache
+   vhost configuration.  Edit the vhost file to reflect the location of your
+   installed copy of Family Map.  Please note that web root is the httpdocs
+   subdirectory.  This ensures that your software is safe.  If you know how,
+   you can also add additional security by creating appropriate open_basedir
+   directives.
+
+7/ Copy application/config/application.sample.ini to 
+   application/config/application.ini
+
+8/ Edit application/config/application.ini and search and replace following 
+   tags:
+
+ - %dbName%  -> name of your database
+ - %dbHost%  -> host name for database server (usually localhost)
+ - %dbUid$   -> user name for database access
+ - %dbPwd%   -> password for database access user
+ - %logNameTo% -> Email address for emailing error messages to
+ - %logNameFrom% -> Email address that system will send log messages from
+ - %cryptSeed% -> Crypto seed string that you created at step 4
+
+9/ Copy application/config/mail.sample.xml to application/config/mail.xml
+
+10/ Edit application/config/mail.xml and enter mail details as for application.ini
+   The sample mail config is for an authenticated smtp server.  Please see the
+   Zend_Mail documentation at http://framework.zend.com/manual/en/zend.mail.html
+   for details of how to set up for different scenarios
+
+11/ Copy the application/configs/googlemapkey.sample.php file to
+   application/configs/googlemapkey.php
+
+12/ If you haven't already got one, go to http://code.google.com/apis/maps/signup.html
+   and signup for Google Maps API and generate a key for your site.
+   Edit application/configs/googlemapkey.php and put your key in the relevant
+   section of the configuration - usually ZF4_Defines::STAGE_PROD:
+
+13/ Restart apache
+
+14/ Browse to your installed url and sign on  with the uid and pwd that you set
+    at step 5.
+
+15/ Create a new organisation and user for that organisation. Enter the following
+    details:
+
+ - Tag - enter a three letter acronym for your organisation
+ - Name, Address, Contact, Tel, Email - enter the details for your organisation
+ - Map CLat, Map CLong - enter the latitude and longitude of your organisation
+   as displayed on Google Maps.
+ - License - enter None - this is not currently used
+ - Admin Name - Enter the user name that will be the administrator for the 
+   organisation
+ - Admin Email - Enter the email address of the administrator.  The user will
+   recieve an email with their account details
+ - Admin Payroll No. - Enter your administrators organisational payroll number.
+
+   This will set up your organisation and create an administrator account for
+   it.  From now on you should logon to the system using that account.  So logoff
+   now.
+
+16/ Copy the the httpdocs/images/brand/WLC directory to a directory named after
+   the tag you created for your organisation, e.g. if your tag is 'TST', then
+   copy the httpdocs/images/brand/WLC to httpdocs/images/brand/TST.  Now replace
+   the logo.jpg and word_logo.jpg files with images that reflect your organisation
+   and that are the same size as the originals.  This will 'brand' the site
+   with your logo when you log on.
+
+17/ Log on again using your new organisation's admin uid and password.
+
+18/ Read the online documentation to find out how you set up and maintain your
+   organisation's data.

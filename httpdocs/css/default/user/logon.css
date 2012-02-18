@@ -1,0 +1,57 @@
+
+.element{
+	padding:1em 0 0 0 ;
+	float:left;
+	margin-right:2em;
+}
+#uName,#uPwd{
+	font-size:1.6em;
+	padding:0.4em;	
+}
+
+span#userMessage {
+	color:red;
+	font-size:1.2em;
+	padding:10px auto;
+}
+ul.errors {
+	display:none;
+}
+
+/* Css for map dashboard */
+div#mainPane {
+	 width:101%;
+}
+div.mapPanel {
+	min-height:540px;
+	float:left;
+	padding: 0px;
+	margin: 0px;
+}
+div.mapPanel h2 {
+	font-size:1.7em;
+}
+div.mapPanel h3 {
+	font-size:1.6em;
+}
+div.mapPanel label, div.mapPanel p, div.mapPanel th, div.mapPanel td {
+	font-size:1.2em;
+}
+/** logon input **/
+div#panelLeft {
+	width: 28%;
+	padding-right:5px;
+}
+
+/** Map display **/
+div#panelMap {
+	width: 60%;
+	border-left: 2px solid #7da170;
+	border-right: 2px solid #7da170;
+	padding: 0px 0px 0px 7px;	
+}
+
+
+
+
+		

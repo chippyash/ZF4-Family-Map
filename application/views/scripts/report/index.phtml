@@ -1,0 +1,214 @@
+<div id="panelLeft" class='reportPanel'>
+	<h1>Saved Reports</h1>
+	<div class="reportPanel">
+		<div class="reportSave">
+			<?= $this->saveSelect ?>
+			<img src="/images/icons/icon_html.gif" alt="Html Report" title="On screen report" onClick="javascript:runSaved('html')"/>
+			<img src="/images/icons/icon_doc.gif" alt="Document Report" title="Download report as document" onClick="javascript:runSaved('word')"/>
+			<img src="/images/icons/icon_xls.gif" alt="Spreadsheet Report" title="Download report as spreadsheet" onClick="javascript:runSaved('excel')"/>
+		</div>
+		<img id="saveBtn" src="/images/icons/savetodb.png" alt="Save Current Report" title="Save Current Report" onClick="javascript:saveFilter()"/>
+	</div>
+	<h1>Overlay Reports</h1>
+	<div id="ovlQ" class="reportPanel">
+		<div class='reportOverlay'>
+			<h3>Select Overlay</h3>
+			<div class="reportSelOvl">
+				<?= $this->ovlSelect ?>
+			</div>
+		</div>
+		<div class='reportMembers'>
+			<h3>Members</h3>
+			<div class="reportSelMbr">
+				<?= $this->mbrSelect ?>
+			</div>
+		</div>
+		<div class='reportCategories'>
+			<h3>Categories</h3>
+			<div class="reportSelCat">
+				<?= $this->catSelect ?>
+			</div>
+		</div>
+		<div class='reportServices'>
+			<h3>Services</h3>
+			<div class="reportSelSrvc">
+				<?= $this->srvcSelect ?>
+			</div>
+		</div>
+		<div class='reportFilter'>
+			<h3>Filters</h3>
+			<div class="reportSelFilter">
+				<table>
+					<tbody>
+						<tr><td>Additional filters</td></tr>
+    		   			<tr><td><input name="fltExclude" type="checkbox" value="1" /><span style="color:black;">Exclude members not in any overlay</span></td></tr>
+    	       		</tbody>
+    	       	</table>
+			</div>
+		</div>
+		<div class="reportSelect">
+			<img src="/images/icons/icon_html.gif" alt="Html Report" title="On screen report" onClick="javascript:runReport('ovl','html')"/>
+			<img src="/images/icons/icon_doc.gif" alt="Document Report" title="Download report as document" onClick="javascript:runReport('ovl','word')"/>
+			<img src="/images/icons/icon_xls.gif" alt="Spreadsheet Report" title="Download report as spreadsheet" onClick="javascript:runReport('ovl','excel')"/>
+		</div>
+	</div>
+	<h1>Member Reports</h1>
+	<div id="mbrQ" class="reportPanel">
+		<div class='reportMembers'>
+			<h3>Members</h3>
+			<div class="reportSelMbr">
+				<?= $this->mbrSelect ?>
+			</div>
+		</div>
+		<div class='reportCategories'>
+			<h3>Categories</h3>
+			<div class="reportSelCat">
+				<?= $this->catSelect ?>
+			</div>
+		</div>
+		<div class='reportServices'>
+			<h3>Services</h3>
+			<div class="reportSelSrvc">
+				<?= $this->srvcSelect ?>
+			</div>
+		</div>
+		<div class="reportSelect">
+			<img src="/images/icons/icon_html.gif" alt="Html Report" title="On screen report" onClick="javascript:runReport('mbr','html')"/>
+			<img src="/images/icons/icon_doc.gif" alt="Document Report" title="Download report as document" onClick="javascript:runReport('mbr','word')"/>
+			<img src="/images/icons/icon_xls.gif" alt="Spreadsheet Report" title="Download report as spreadsheet" onClick="javascript:runReport('mbr','excel')"/>
+		</div>
+	</div>
+	<h1>Usage Reports</h1>
+	<div id="usgQ" class="reportPanel">
+		<div class='reportServices'>
+			<h3>Services</h3>
+			<div class="reportSelSrvc">
+				<?= $this->srvcSelect ?>
+			</div>
+		</div>
+		<div class='reportCategories'>
+			<h3>Dates</h3>
+			<div class="reportSelCat">
+				<dl>
+					<dt><label for="fromDt">From:</label></dt>
+					<dd><input name="fromDt" type="text" class="datepicker"></dd>
+					<dt><label for="toDt">To:</label></dt>
+					<dd><input name="toDt" type="text" class="datepicker"></dd>
+					<dt><label for="splitDt">Display:</label></dt>
+					<dd><select name="splitDt">
+						<option value="day">By Day</option>
+						<option value="week">By Week</option>
+						<option value="month">By Month</option>
+						<option value="quarter">By Quarter</option>
+						<option value="year">By Year</option>
+					</select></dd>
+				</dl>
+			</div>
+		</div>
+		<div class="reportSelect">
+			<img src="/images/icons/icon_html.gif" alt="Html Report" title="On screen report" onClick="javascript:runReport('usg','html')"/>
+			<img src="/images/icons/icon_doc.gif" alt="Document Report" title="Download report as document" onClick="javascript:runReport('usg','word')"/>
+			<img src="/images/icons/icon_xls.gif" alt="Spreadsheet Report" title="Download report as spreadsheet" onClick="javascript:runReport('usg','excel')"/>
+		</div>
+	</div>
+	<h1>Attendance Registers</h1>
+	<div id="attQ" class="reportPanel">
+		<div class='reportServices'>
+			<h3>Service</h3>
+			<div class="reportSelSrvc">
+				<dl>
+					<dt><label for="attSrvcSelect">Select the service</label></dt>
+					<dd>
+						<select id="attSrvcSelect" name="attSrvcSelect" onchange="_attFetchDates(this)">
+						<?php foreach ($this->attSrvcSelect as $id=>$name) { ?>
+							<option value="<?= $id ?>"><?= $name ?></option>
+						<?php } ?>
+						</select>
+					</dd>
+					<dt><label for="attDateSelect">No dates</label></dt>
+					<dd>
+						<select id="attDateSelect" name="attDateSelect" multiple="multiple" size="5">
+						</select>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="reportSelect">
+			<img src="/images/icons/icon_html.gif" alt="Html Report" title="On screen report" onClick="javascript:runReport('att','html')"/>
+			<img src="/images/icons/icon_doc.gif" alt="Document Report" title="Download report as document" onClick="javascript:runReport('att','word')"/>
+			<img src="/images/icons/icon_xls.gif" alt="Spreadsheet Report" title="Download report as spreadsheet" onClick="javascript:runReport('att','excel')"/>
+		</div>
+	</div>	
+	<h1>Attendance Statistics</h1>
+	<div id="enrQ" class="reportPanel">
+		<div class='reportServices'>
+			<h3>Service</h3>
+			<div class="reportSelSrvc">
+				<dl>
+					<dt><label for="enrSrvcSelect">Select the service</label></dt>
+					<dd>
+						<select id="enrSrvcSelect" name="enrSrvcSelect" >
+						<?php foreach ($this->enrSrvcSelect as $id=>$name) { ?>
+							<option value="<?= $id ?>"><?= $name ?></option>
+						<?php } ?>
+						</select>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="reportSelect">
+			<img src="/images/icons/icon_html.gif" alt="Html Report" title="On screen report" onClick="javascript:runReport('enr','html')"/>
+			<img src="/images/icons/icon_doc.gif" alt="Document Report" title="Download report as document" onClick="javascript:runReport('enr','word')"/>
+			<img src="/images/icons/icon_xls.gif" alt="Spreadsheet Report" title="Download report as spreadsheet" onClick="javascript:runReport('enr','excel')"/>
+		</div>
+	</div>	
+	<h1>Member Card Details</h1>
+	<div id="cardQ" class="reportPanel">
+		<div class='reportServices'>
+			<h3>Information</h3>
+			<p>Prints a list of member details for card generation</p>
+		</div>
+		<div class="reportSelect">
+			<img src="/images/icons/icon_html.gif" alt="Html Report" title="On screen report" onClick="javascript:runReport('card','html')"/>
+			<img src="/images/icons/icon_xls.gif" alt="Spreadsheet Report" title="Download report as spreadsheet" onClick="javascript:runReport('card','excel')"/>
+		</div>
+	</div>	
+</div>
+
+<div class="clear"></div>
+
+<!-- UI forms -->
+<div id="uiSaveReport" class="noshow" title="Save Report">
+	<form id="frmSaveReport">
+		<dl>
+			<dt><label for="name">Report name *</label></dt>
+			<dd><input type="text" id="sqname" name="sqname" size="30" class="text ui-widget-content ui-corner-all"></dd>
+			<dt><label for="desc">Description</label></dt>
+			<dd><input type="text" id="sqdesc" name="sqdesc" size="30" class="text ui-widget-content ui-corner-all"></dd>
+		</dl>
+	</form>
+</div>
+<div id="uiError" class="noshow" title="Error">
+	<p id="errMsg"></p>
+</div>
+<!-- post form for getting reports as download documents -->
+<form id="dnlForm" class="noshow" action="/report/run" method="POST">
+	<input type="hidden" name="format" value="" />
+	<input type="hidden" name="gender" value="" />
+	<input type="hidden" name="age" value="" />
+	<input type="hidden" name="pcode" value="" />
+	<input type="hidden" name="cat" value="" />
+	<input type="hidden" name="srvc" value="" />
+	<input type="hidden" name="ethnicity" value="" />
+	<input type="hidden" name="lang" value="" />
+	<input type="hidden" name="pupil" value="" />
+	<input type="hidden" name="ovl" value="" />
+	<input type="hidden" name="startDt" value="" />
+	<input type="hidden" name="endDt" value="" />
+	<input type="hidden" name="rpt" value="" />
+	<input type="hidden" name="splitDt" value="" />
+	<input type="hidden" name="attSrvc" value="" />
+	<input type="hidden" name="attDate" value="" />
+	<input type="hidden" name="enrSrvc" value="" />
+	<input type="hidden" name="fltExclude" value="" />
+</form>

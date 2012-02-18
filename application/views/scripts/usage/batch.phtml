@@ -1,0 +1,35 @@
+<script type="text/javascript">//<![CDATA[
+var _memOpts = "<?php foreach ($this->memOpts as $id=>$value) { echo "<option value='{$id}'>{$value}</option>"; } ?>";
+var _srvcOpts = "<?php foreach ($this->srvcOpts as $id=>$value) { echo "<option value='{$id}'>{$value}</option>"; } ?>";
+//]]></script>
+<form id="usageForm" action="/usage/batch" method="POST">
+	<div id="leftPane">
+	<h1>Usage Input</h1>
+		<dl>
+			<dt><label for="nrec">Batch Count</label></dt>
+			<dd><input type="text" id="nrec" name="nrec" value="20" onchange="usgSetTableRows();"></dd>
+			<dt><label for="dt">Usage date</label></dt>
+			<dd><input type="text" id="dt" name="dt"></dd>
+			<dt>Action</dt>
+			<dd>
+				<input name="submit" type="submit" value="Submit">
+				<input name="cancel" type="submit" value="Cancel">
+			</dd>
+		</dl>
+	</div>
+	<div id="rightPane">
+			<table id="usgTable">
+				<col width="40%">
+				<col width="40%">
+				<thead>
+					<tr>
+						<th>Member</th>
+						<th>Service</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+	</div>
+</form>
+<div class="clear"></div>

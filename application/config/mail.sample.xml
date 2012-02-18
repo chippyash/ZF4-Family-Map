@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- See ZF4_Mail -->
+<config>
+	<!-- smtp|sendmail -->
+	<transport>smtp</transport>
+	<!-- see Zend_Mail for extra parameters for mail transport -->
+	<xtraParams>
+		<auth>login</auth>
+		<username>%smtpAccountName%</username>
+		<password>%smtpAccountPassword%</password>
+		<ssl>ssl</ssl>
+		<port>465</port>
+	</xtraParams>
+	<smtpHost>%smtpHostName%</smtpHost>
+	<from>%emailFrom%</from>
+	<fromName>Family Map Automailer</fromName>
+</config>

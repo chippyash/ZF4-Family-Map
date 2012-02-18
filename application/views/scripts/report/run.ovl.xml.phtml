@@ -1,0 +1,53 @@
+<?php 
+$ovlNames = array_keys($this->data[0]['overlays']); 
+$ovlCount = array_flip($ovlNames);
+foreach ($ovlCount as $key=>&$value) {
+	$value = 0;
+}
+?>
+<table class="rptTable">
+	<thead>
+		<tr>
+			<th>Uid</th>
+			<th>Name</th>
+			<?php foreach ($ovlNames as $name) { ?>
+			<th><?= $name ?></th>
+			<?php } ?>
+		</tr>
+	</thead>
+	<tbody>
+		<?php $class = 'odd'; foreach ($this->data as $item) { ?>
+			<?php if($this->fltExclude) {
+				$dispRow = false;
+				foreach ($ovlNames as $name) {
+					if ($item['overlays'][$name]) $dispRow = true;
+				}
+			} else {
+				$dispRow = true;
+			} ?>
+			<?php if($dispRow) { ?>
+			<tr class="<?= $class ?>">
+				<td><?= $item['uid']?></td>
+				<td><?= $item['style'] . ' ' . $item['fName'] . ' ' . $item['lName']?></td>
+				<?php foreach ($ovlNames as $name) { ?>
+				<!--<td><?= ($item['overlays'][$name] ? 'Yes' : 'No'); ?></td>-->
+				<td align="center"><img src="<?= $this->logoUrl ?>icons/<?= ($item['overlays'][$name] ? 'tick.png' : 'cross.png') ?>" alt="<?= ($item['overlays'][$name] ? 'Yes' : 'No') ?>" /></td>
+				<?php $ovlCount[$name] += ($item['overlays'][$name] ? 1 : 0);
+				} ?>	
+			</tr>
+			<?php } else {
+				foreach ($ovlNames as $name) {
+					$ovlCount[$name] += ($item['overlays'][$name] ? 1 : 0);
+				}
+			} ?>
+		<?php if ($dispRow) $class = ($class=='odd'?'even':'odd');} ?>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>Count</td><td>&nbsp;</td>
+			<?php foreach ($ovlNames as $name) { ?>
+			<td><?= $ovlCount[$name] . ' from ' . count($this->data) ?></td>
+			<?php } ?>
+		</tr>
+	</tfoot>
+</table>

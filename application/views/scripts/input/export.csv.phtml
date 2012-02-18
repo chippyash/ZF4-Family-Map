@@ -1,0 +1,31 @@
+<?php
+header('Content-type: application/octet-stream');
+header('Content-Disposition: attachment; filename="'.$this->filename.'.csv');//
+//Headers
+$line = '';
+$cols = array();
+foreach($this->meta as $column) {
+	$comments = explode('|',$column['COMMENT']);
+	$line .= $comments[0] . ',';
+	$cols[] = array('name'=>$column['COLUMN_NAME'],
+				   'type'=>$column['DATA_TYPE']
+				  );
+}
+echo rtrim($line,',') . PHP_EOL;
+//Data
+foreach ($this->data as $row) {
+	$line = '';
+	foreach($cols as $col) {
+		$val = $row[$col['name']];
+		$val = (is_numeric($val) ? $val : '"' . $val . '"');
+		$line .= $val .',';
+	}
+	echo rtrim($line,',') . PHP_EOL;
+}
+//Key
+echo PHP_EOL;
+echo 'KEY: ' . PHP_EOL;
+foreach($this->meta as $column) {
+	$comments = explode('|',$column['COMMENT']);
+	echo $comments[0] . ',' . $comments[1] . PHP_EOL;
+}

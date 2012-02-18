@@ -1,0 +1,76 @@
+/* Styles for form display */
+.inputType-checkbox{margin-right:0.5em;}
+
+.inputType-text,
+.inputType-password,
+textarea{border:1px solid #ccc;padding:0.2em;font-size:1.2em;}
+textarea{font-size:1.4em;}
+
+#hash-container{width:2em;}
+
+.inputReadOnly{color:#666;background-color:#eee;}
+
+.inputType-text.large{height:1.55em;}
+
+.form_elements{
+}
+.form_elements .element{
+	float:left;
+	margin-right:1em;
+}
+dt{
+	font-size:1.2em;
+	margin-bottom:0.5em;
+	height:1.4em;
+}
+
+
+.element dd{
+	position:relative;	
+}
+
+ul.errors{
+	cursor:pointer;
+	background-image:url(/images/icons/exclamation.png);
+	background-repeat:no-repeat;
+	background-position: right top;
+	width:250px;
+	list-style:none;
+	background-color:#fff;
+}
+ul.errors:hover{
+	background-color:#FCC;
+}
+ul.errors li{
+	padding-left:2em;
+	padding-top:5px;
+}
+
+ul.errors.visible{
+	width:inherit;
+}
+ul.errors.visible li{
+	display:block;
+}
+
+select {
+	padding-right:10px;
+}
+label{
+font-size: 1.4em ;
+}
+label.required{
+	font-style: italic;
+background-image:url(/images/icons/asterisk_red.png);
+background-position:top right;
+background-repeat:no-repeat;
+padding-right:20px;	
+}
+dt{
+	margin-top:0.5em;
+}
+
+button.ok{
+	margin-top:20px;
+}
+

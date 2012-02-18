@@ -1,0 +1,38 @@
+div#rightPane table {
+	width: 95%;
+}
+div.enrTable {
+	margin-bottom:20px;
+}
+
+table.enrTable {
+	width:100%;
+}
+table.enrTable tbody tr.odd {
+	background-color:#e5f9ff;
+}
+table.enrTable tbody tr.even {
+	background-color:#ede4d8;
+}
+
+table.enrTable tfoot tr td {
+	border-top:2px solid #7da170;
+}
+/* tooltip styling. by default the element to be styled is .tooltip  */
+.tooltip {
+	display:none;
+	background:transparent url(/tools/img/tooltip/black_arrow.png);
+	font-size:12px;
+	height:70px;
+	width:160px;
+	padding:25px;
+	color:#fff;	
+}
+div.admin{
+	background-color: #add8e6;
+	border: 2px solid  #7f7f7f;
+	margin-left:10px;
+	padding:10px;
+	
+}
+

@@ -1,0 +1,29 @@
+<?php 
+$ovlNames = array_keys($this->data[0]['overlays']); 
+$ovlCount = array_flip($ovlNames);
+foreach ($ovlCount as $key=>&$value) {
+	$value = 0;
+}
+echo "Uid,Style,FName,LName";
+foreach ($ovlNames as $name) {
+	echo ",{$name}";
+}
+echo PHP_EOL;
+foreach ($this->data as $item) {
+	if($this->fltExclude) {
+		$dispRow = false;
+		foreach ($ovlNames as $name) {
+			if ($item['overlays'][$name]) $dispRow = true;
+		}
+	} else {
+		$dispRow = true;
+	}
+	if($dispRow) {
+		echo "{$item['uid']},{$item['style']},{$item['fName']},{$item['lName']}";
+		foreach ($ovlNames as $name) {
+			$yn = ($item['overlays'][$name] ? 'Yes' : 'No');
+			echo ",{$yn}";
+		}
+		echo PHP_EOL;
+	}
+}

@@ -1,0 +1,21 @@
+<?php if (!is_null($this->form)) { ?>
+	<h1>My Account > Edit</h1>
+	<?= echo $this->form; ?>
+<?php } else { ?>
+	<h1>Thank you</h1>
+	<p>Thank you for updating your details</p>
+<?php } ?>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function(){checkPCode();});
+function checkPCode() {
+	if ($('#country option:selected').val() == 'UK') {
+		$('#pCode').show();
+		$('#pCode-label').show();
+	} else {
+		$('#pCode').hide();
+		$('#pCode-label').hide();
+	}
+}
+//]]>
+</script>

@@ -1,0 +1,22 @@
+ul#dataMaintList,
+ul#dataMaintList li {
+	list-style:none;
+	margin:0 10px;
+	padding:5px;
+	font-size: 1.20em ;
+	font-weight: bold;
+	color:#003b4a;
+}
+.dmOdd{background-color:#7da170;}
+.dmEven{background-color:#a5d494;}
+
+ul#dataMaintList li:hover {
+	background-color:#69875f;
+	color:#007fa0;
+}
+ul#dataMaintList li.dmSel{
+	background-color:#007fa0;
+	color:#a12000;
+}
+
+ 

@@ -1,0 +1,64 @@
+<?php echo $this->doctype(); ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	<!-- Family Map - A social mapping system for community organisations-->
+   	<!-- copyright: Woodnewton - A Learning Community, UK, 2010          -->
+   	<!--            http://www.woodnewton.northants.sch.uk/              -->
+        <!-- copyright: ZF 4 Business Ltd, UK, 2010                          -->
+        <!--            http://zf4.biz                                       -->
+      <?php
+      echo $this->headTitle();
+      echo $this->headLink();
+      echo $this->headStyle();
+      echo $this->headScript();
+      echo $this->headMeta();
+      ?>
+
+     <!--[if IE]>
+            <link type="text/css" rel="stylesheet" href="/css/ie.css" />
+    <![endif]-->
+
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="header">
+                <div id="logo"><img src="<?= $this->branding()->logo(); ?>" alt="<?= $this->branding()->name(); ?>"/></div>
+                <div id="brand"><img src="<?= $this->branding()->overlay(); ?>" alt="<?= $this->branding()->name(); ?>"/></div>
+                <div id="user"><?= $this->logon() ?></div>
+            </div>
+            <div class="clear"></div>
+            <div id="navigation">
+            	<div id="menu">
+            		<?= $this->navigation()->menu()->renderMenu(null,array('indent'=>16,'ulClass'=>'wlcnav'));?>
+            	</div>
+            </div>
+            <div id="main">
+                <div id="leftPane"><?php echo $this->layout()->content ?></div>
+                 <div id="rightPane"><?php echo $this->layout()->subcontent ?></div>
+            </div>
+            <div class="clear"></div>
+            <div id="footer">
+                <ul>
+                    <li>&copy; Woodnewton - A Learning Community, UK, 2010</li>
+                    <li>&copy; ZF 4 Business Limited, UK, 2010</li>
+                    <li>Design & Development by <a href="http://zf4.biz" title="ZF 4 Business Ltd" target="_blank">ZF 4 Business</a></li>
+                    <li>License <a href="http://www.gnu.org/licenses/agpl.html" title="GNU AFFERO GENERAL PUBLIC LICENSE" target="_blank">GNU AGPL V3</a></li>
+                    <?php if ($this->loggedOn) { ?>
+                    	<?php if ($this->seeFooterLinks) { ?>
+                    	<li><a href="http://track.zf4.biz" title="Issue Tracker" target="_blank">Issue Tracker</a></li>
+                    	<li><a href="<?= $this->cryptuser() ?>" target="_blank" title="Documentation">User Guide</a></li>
+                    	<?php } ?>
+                    <li><a href="/info/credits" >Credits</a></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+        <?php echo $this->inlineScript() ?>
+        <?php echo $this->currmenu() ?>
+    </body>
+</html>

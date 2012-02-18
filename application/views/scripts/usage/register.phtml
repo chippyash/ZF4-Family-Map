@@ -1,0 +1,35 @@
+<form id="usageForm" action="/usage/register" method="POST">
+	<div id="leftPane">
+	<h1>Registration</h1>
+		<dl>
+			<dt><label for="srvcId">Select Service</label></dt>
+			<dd>
+				<select id="srvcId" name="srvcId" value="20" onchange="srvcSetTableRows();">
+				<?php foreach ($this->srvcOpts as $id=>$value) { echo "<option value='{$id}'>{$value}</option>"; } ?>
+				</select>
+			</dd>
+			<dt><label for="dt">Usage date</label></dt>
+			<dd><input type="text" id="dt" name="dt"></dd>
+			<dt>Action</dt>
+			<dd>
+				<input name="submit" type="submit" value="Submit">
+				<input name="cancel" type="submit" value="Cancel">
+			</dd>
+		</dl>
+	</div>
+	<div id="rightPane">
+			<table id="usgTable">
+				<col width="80%">
+				<col width="20%">
+				<thead>
+					<tr>
+						<th>Member</th>
+						<th>Attended</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+	</div>
+</form>
+<div class="clear"></div>

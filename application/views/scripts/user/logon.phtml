@@ -1,0 +1,23 @@
+<div id="panelLeft" class='mapPanel'>
+<?php if (APPLICATION_ENV == 'demo') { ?>
+<h1>Family Map Demonstration System</h1>
+<?php } ?>
+<h2>Notice</h2>
+<p>This is a closed and private system.  Unauthorised entry is forbidden.  All entry attempts are logged.</p>
+<h2>Logon details</h2>
+<?php if ($this->message != '') { ?>
+<span id="userMessage"><?= $this->message ?></span>
+<?php } ?>
+<?= $this->form ?>
+<p>If you have forgotten your password, please contact your system administrator</p>
+<?php if (APPLICATION_ENV == 'demo') { ?>
+<h3>Book your demonstration</h3>
+Click <a href="http://zf4.biz/info/fmlymap" title="ZF 4 Business" target="_blank">here </a> to find out how your school or college can benefit from Family Map
+<p></p>
+<?php } ?>
+</div>
+<div id="panelMap" class="mapPanel">
+	<h2>Join the family!</h2>
+	<div id="gMap"><?php $this->GMap()->getMap('map1')->render(); ?></div>
+	<p>Click <a href="http://zf4.biz/info/fmlymap" title="ZF 4 Business" target="_blank">here </a> to find out how your school or college can benefit from Family Map</p>
+</div>

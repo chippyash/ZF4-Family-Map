@@ -1,0 +1,23 @@
+<?php if ($this->hasreport) { ?>
+<div class="rptHeader">
+	<?php if ($this->showLogo) { ?>
+	<img class="rptLogo" src="<?= $this->logoUrl . $this->logo ?>" alt="logo" />
+	<?php } ?>
+	<span class="rptTitle"><?= $this->title ?></span>
+</div>
+<div class="clear"></div>
+<div class="rptCriteria">
+<?php foreach ($this->where as $criteria) { ?>
+	<span class="rptCriteria"><?= $criteria ?></span>
+<?php } ?>
+	<div class="clear"></div>
+</div>
+<div class="rptBody"><?php include('run.' . $this->rptType . '.xml.phtml');?></div>
+<div class="rptFooter">
+	<span class="rptDate">Created on: <?= $this->date ?></span>
+	<span class="rptUser">Created by: <?= $this->user('uName') ?> with Family Map from <a href="http://zf4.biz" >ZF4 Business Limited, UK</a></span>
+	<span class="rptCopy">Data copyright (c) <?= $this->org('name') ?></span>
+</div>
+<?php } else { ?>
+<p>Sorry - there is no data to match your query</p>
+<?php } ?>

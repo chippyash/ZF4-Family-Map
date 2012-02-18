@@ -1,0 +1,18 @@
+<div id="panelLeft">
+	<?php if (APPLICATION_ENV == 'demo') { ?>
+		<h1>Family Map Demonstration System</h1>
+	<?php } ?>
+	<h2>Notice</h2>
+	<p>This is a closed and private system.  Unauthorised entry is forbidden.  All entry attempts are logged.</p>
+	<?php if($this->hasOrg) { ?>
+		<h2>Logon details</h2>
+		<?php if ($this->message != '') { ?>
+			<span id="userMessage"><?= $this->message ?></span>
+		<?php } ?>
+		<?= $this->form ?>
+		<p>If you have forgotten your password, please contact your system administrator</p>
+	<?php } else { ?>
+		<h2>Error</h2>
+		<?= $this->message ?>
+	<?php } ?>
+</div>

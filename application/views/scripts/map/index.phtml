@@ -1,0 +1,145 @@
+<div id="panelLeft" class='mapPanel'>
+	<h1>Dashboard</h1>
+	<div id="panelQuery" class="mapPanel">
+		<h2>Select ...</h2>
+		<div class='mapSave'>
+			<h3>Saved Queries</h3>
+			<div class="mapSelSave">
+				<?= $this->saveSelect ?>
+				<img id="runBtn" src="/images/icons/database_go.png" alt="Run Saved" title="Run Saved Query" onClick="javascript:runSaved()"/>
+			</div>
+		</div>
+		<div class='mapMembers'>
+			<h3>Members</h3>
+			<div class="mapSelMbr">
+				<?= $this->mbrSelect ?>
+			</div>
+		</div>
+		<div class='mapCategories'>
+			<h3>Categories</h3>
+			<div class="mapSelCat">
+				<?= $this->catSelect ?>
+			</div>
+		</div>
+		<div class='mapServices'>
+			<h3>Services</h3>
+			<div class="mapSelSrvc">
+				<?= $this->srvcSelect ?>
+			</div>
+		</div>
+		<div class="mapSelect">
+			<img id="saveBtn" src="/images/icons/savetodb.png" alt="Save Query" title="Save Query" onClick="javascript:saveFilter()"/>
+			<img id="goBtn" src="/images/icons/runarrow.png" alt="Run Query" title="Run Query" onClick="javascript:runFilter()"/>
+		</div>
+	</div>
+	<?php if($this->canDraw) { ?>
+	<h1>Drawing</h1>
+	<div id="panelDraw" class="mapPanel noshow">
+		<div id="drawControls" class="drawInner">
+			<img id="drcNew" class="drawBtn" src="/images/icons/draw/onebit_06.png" alt="New" title="New Shape"  />
+			<img id="drcClose" class="drawBtn" src="/images/icons/draw/onebit_10.png" alt="Close" title="Close Shape"  />
+			<img id="drcClear" class="drawBtn" src="/images/icons/draw/onebit_09.png" alt="Clear" title="Clear Current Shape"  />
+			<img id="drcColour" class="drawBtn" src="/images/icons/draw/pallet.png" alt="Colour" title="Set Shape Colour"  />
+			<img id="drcEdit" class="drawBtn" src="/images/icons/draw/onebit_20.png" alt="Edit" title="Edit Current Shape Lines"  />
+			<img id="drcDelete" class="drawBtn" src="/images/icons/draw/onebit_33.png" alt="Delete" title="Delete last line"  />
+			<img id="srcSave" class="drawBtn" src="/images/icons/draw/onebit_12.png" alt="Save" title="Save Drawing"  />
+		</div>
+	</div>
+	<?php } ?>
+</div>
+
+
+<div id="panelMap" class="mapPanel">
+	<img id="mapWaiting" src="/images/loading_animation_large.gif" class="noshow">
+	<div id="gMap"><?php $this->GMap()->getMap('map1')->render(); ?></div>
+</div>
+<div id="panelCtrl" class="mapPanel">
+	<img id="mapCtrlTarget" src="/images/icons/btn_target_up.png" alt="Centre map" title="Centre map to school" onclick="javascript:mapControl(this)" />
+	<img id="mapCtrlOvl1" class="mapOvlBtn" src="/images/icons/btn_red_splat_up.png" alt="<?= $this->ovl1title ?>" title="" rel="off" onclick="javascript:mapControl(this)" />
+	<img id="mapCtrlOvl2" class="mapOvlBtn" src="/images/icons/btn_green_splat_up.png" alt="<?= $this->ovl2title ?>" title="" rel="off" onclick="javascript:mapControl(this)" />
+	<img id="mapCtrlOvl3" class="mapOvlBtn" src="/images/icons/btn_blue_splat_up.png" alt="<?= $this->ovl3title ?>" title="" rel="off" onclick="javascript:mapControl(this)" />
+	<img id="mapCtrlOvl4" class="mapOvlBtn" src="/images/icons/btn_pallette_up.png" alt="Display other overlays" title="" rel="off" onclick="javascript:mapControl(this)" />
+	<img id="mapCtrlPrint" src="/images/icons/printer_up.png" alt="Print map" title="Print map" onclick="javascript:mapControl(this)" />
+	<?php if($this->canDraw) { ?>
+	<img id="mapCtrlDraw" src="/images/icons/crayon_up.png" alt="<?= $this->crayontitle ?>" title="" rel="off" onclick="javascript:mapControl(this)" />
+	<?php } ?>
+</div>
+<!-- UI forms -->
+<div id="uiSaveQuery" class="noshow" title="Save Query">
+	<form id="frmSaveQuery">
+		<dl>
+			<dt><label for="name">Query name *</label></dt>
+			<dd><input type="text" id="sqname" name="sqname" size="30" class="text ui-widget-content ui-corner-all"></dd>
+			<dt><label for="desc">Description</label></dt>
+			<dd><input type="text" id="sqdesc" name="sqdesc" size="30" class="text ui-widget-content ui-corner-all"></dd>
+		</dl>
+	</form>
+</div>
+<div id="uiError" class="noshow" title="Error">
+	<p id="errMsg"></p>
+</div>
+<div id="uiDrawSave" class="noshow">
+	<span id="canDraw" class="noshow"><?= $this->candraw ?></span>
+	<form id="frmSaveDrawing">
+		<dl>
+			<dt><label for="drname">Layer Name</label></dt>
+			<dd><input type="text" id="drname" name="drname" class="text ui-widget-content ui-corner-all" size="30"/></dd>
+			<dt><label for="">Assign to overlay</label></dt>
+			<dd>
+				<select id="drovl" name="drovl" class="select ui-widget-content ui-corner-all" />
+					<option value="0" selected>Do not assign</option>
+					<option value="1">Red Overlay</option>
+					<option value="2">Green Overlay</option>
+					<option value="3">Blue Overlay</option>
+				</select>
+			</dd>
+		</dl>
+	</form>
+</div>
+<div id="uiColour" class="noshow">
+	<form id="frmColour">
+		<dl>
+			<dt><label for="colPick">Select a colour</label></dt>
+			<dd><select id="colPick" name="colPick" class="select ui-widget-content ui-corner-all" /><?= $this->colours ?></select></dd>
+		</dl>
+	</form>
+</div>
+<div id="uiOverlay" class="noshow">
+	<form id="frmOverlay">
+		<dl>
+			<dt><label for="ovlPick">Select an Overlay</label></dt>
+			<dd><select id="ovlPick" name="ovlPick" class="select ui-widget-content ui-corner-all" /><?php foreach($this->overlays as $key=>$ovl) { ?><option value="<?= $key?>"><?= $ovl?></option><?php } ?></select></dd>
+		</dl>
+	</form>
+</div>
+
+<?php if($this->canDraw) { ?>
+<div id="kjellTools" class="noshow">
+	<!-- hidden storage for kjellTools -->
+	<textarea id="coords1"></textarea>
+    <input type="text" name="color" id="polylineinput1" />
+    <input type="text" name="opacity" id="polylineinput2" />
+    <input type="text" name="weight" id="polylineinput3" />
+    <input type="text" name="styleid" id="polylineinput4" />
+    <input type="text" name="color" id="polygoninput1" />
+    <input type="text" name="opacity" id="polygoninput2" />
+    <input type="text" name="weight" id="polygoninput3" />
+    <input type="text" name="fillcolor" id="polygoninput4" />
+    <input type="text" name="fillopacity" id="polygoninput5" />
+    <input type="text" name="styleid" id="polygoninput6" />
+    <input type="text" name="color" id="recinput1" />
+    <input type="text" name="opacity" id="recinput2" />
+    <input type="text" name="weight" id="recinput3" />
+    <input type="text" name="fillcolor" id="recinput4" />
+    <input type="text" name="fillopacity" id="recinput5" />
+    <input type="text" name="styleid" id="recinput6" />
+    <input type="text" name="myzoom" id="myzoom" value="3" />
+	<select id="toolchoice" name="toolchoice" onchange="toolID=parseInt(this.options[this.selectedIndex].value);setTool();">
+        <option selected="selected" value="1">Polyline</option>
+        <option value="2">Polygon</option>
+        <option value="3">Rectangle</option>
+        <option value="4">Circle</option>
+    </select>
+
+</div>
+<?php } ?>

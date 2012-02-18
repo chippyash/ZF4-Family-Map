@@ -1,0 +1,39 @@
+#pad {height:140px;}
+/* ================================================================ 
+This copyright notice must be untouched at all times.
+
+The original version of this stylesheet and the associated (x)html
+is available at http://www.cssmenus.co.uk
+Copyright (c) 2009- Stu Nicholls. All rights reserved.
+This stylesheet and the associated (x)html may be modified in any 
+way to fit your requirements.
+=================================================================== */
+#dropline {padding:0 0 0 30px; margin:0 0 0 300px; list-style:none; height:40px; background:url(ulback.gif) repeat-x; position:relative;}
+#dropline table {border-collapse:collapse: width:0; height:0; margin:-3px -10px;}
+
+#dropline li {float:left;}
+#dropline li a {display:block; height:40px; line-height:40px; padding:0 20px 0 0; float:left; color:#fff; text-decoration:none; font-family:tahoma, sans-serif; font-size:12px;}
+#dropline li a b {display:block; height:40px; float:left; padding:0 0 0 20px; cursor:pointer;}
+#dropline li a:hover {background:url(tab_a.gif) no-repeat right top; line-height:36px; height:44px}
+#dropline li a:hover b {background:url(tab_b.gif) no-repeat left top; line-height:36px;}
+
+#dropline li:hover > a {background:url(tab_a.gif) no-repeat right top; line-height:36px; height:44px}
+#dropline li:hover > a b {background:url(tab_b.gif) no-repeat left top; line-height:36px;}
+
+#dropline ul {padding:0; margin:0; list-style:none; position:absolute; height:25px; width:700px; background:#f8f8f8; left:-9999px; top:44px; z-index:10; border-bottom:1px solid #fff;}
+#dropline ul li {height:25px; line-height:25px;}
+#dropline ul.right li {float:right;}
+#dropline ul li a {color:#000; padding:0 10px 0 10px; height:25px; line-height:25px; border-right:1px solid #e60; font-weight:bold; font-size:11px;}
+#dropline ul li a:hover {height:25px; line-height:25px; background:transparent; color:#c60;}
+#dropline ul.right li a {border-left:1px solid #e60; border-right:0;}
+#dropline ul li a.last {border:0;}
+
+
+#dropline :hover ul {left:0;}
+
+#dropline li.current ul {left:0; z-index:1;}
+#dropline li.current a {background:url(tab_a.gif) no-repeat right top; line-height:36px; height:44px}
+#dropline li.current a b {background:url(tab_b.gif) no-repeat left top; line-height:36px;}
+#dropline li.current ul li a {color:#000; padding:0 10px 0 10px; height:25px; line-height:25px; background:transparent;}
+#dropline li.current ul li.current_sub a {color:#c60;}
+#dropline li.current ul li a:hover {color:#c60;}

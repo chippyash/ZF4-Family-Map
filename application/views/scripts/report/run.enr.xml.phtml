@@ -1,0 +1,39 @@
+
+<table class="rptTable">
+	<thead>
+		<tr>
+			<th>Uid</th>
+			<th>Style</th>
+			<th>FName</th>
+			<th>LName</th>
+			<th>Attended</th>
+			<th>% Attendance</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php $class = 'odd'; 
+		$avgAtt = 0; $avgPercent = 0;
+		foreach ($this->data as $item) { ?>
+			<tr class="<?= $class ?>">
+				<td><?= $item['uid']?></td>
+				<td><?= $item['style'] ?></td>
+				<td><?= $item['fName']?></td>
+				<td><?= $item['lName']?></td>
+				<td align="center"><?= $item['count'] ?></td>
+				<td align="center"><?= sprintf('%01.2f',$item['percent'])?></td>
+			</tr>
+		<?php 
+		$avgAtt += $item['count'];
+		$avgPercent += $item['percent'];
+		$class = ($class=='odd'?'even':'odd');} ?>
+	</tbody>
+	<tfoot>
+		<tr>
+		<td colspan="2">Total Possible Attendance</td>
+		<td align="center"><?= $this->data[0]['tot'] ?></td>
+		<td>Averages</td>
+		<td align="center"><?= sprintf('%01.2f',$avgAtt/count($this->data))?></td>
+		<td align="center"><?= sprintf('%01.2f',$avgPercent/count($this->data))?></td>
+		</tr>
+	</tfoot>
+</table>

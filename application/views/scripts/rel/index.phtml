@@ -1,0 +1,91 @@
+<?php
+//create grouped selector options for people
+$optGroup = array();
+foreach ($this->people as $key=>$value) {
+	$parts = explode(' ',$value);
+	if (!isset($optGroup[$parts[0]])) {
+		$optGroup[$parts[0]] = array();
+	}
+	$optGroup[$parts[0]][$key] = "{$parts[1]} {$parts[2]} {$parts[3]}";
+}
+?>
+<div id="leftPane">
+	<div id="panelLeft" class='relPanel'>
+		<h1>People</h1>
+		<div id="panelQuery" class="relPanel">
+			<div class="relMembers">
+				<dl>
+					<dt><label for="relPerson">Select a person</label></dt>
+					<dd><select id="relPerson" size="30" onchange="swfobject.getObjectById('roamer').setTreeDepth($('#treeDepth').val());swfobject.getObjectById('roamer').setSelectedNodeID($(this).val())">
+						<?php foreach ($optGroup as $grp=>$options) { ?>
+							<optgroup label="<?= ucfirst($grp) ?>">
+								<?php foreach ($options as $key=>$value) { ?>
+								<option value="<?= $key ?>"><?= $value ?></option>	
+								<?php } ?>
+							</optgroup>
+							
+						<?php } ?>
+						</select>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<h1>Controls</h1>
+		<div id="panelControl" class="relPanel">
+			<div class="relControl">
+				<dl>
+					<dt><label for="treeDepth">Display Depth</label></dt>
+					<dd>
+						<select name="treeDepth" onchange="swfobject.getObjectById('roamer').setTreeDepth($(this).val())">
+							<option value="1">&nbsp;1</option>
+							<option value="2">&nbsp;2</option>
+							<option value="3" selected="selected">&nbsp;3</option>
+							<option value="4">&nbsp;4</option>
+							<option value="5">&nbsp;5</option>
+							<option value="6">&nbsp;6</option>
+							<option value="7">&nbsp;7</option>
+						</select>
+					</dd>
+					<dt></dt>
+					<dd>
+						<button type="button" name="treeReload" onclick="swfobject.getObjectById('roamer').reloadGraphData()">Reload Data</button>
+					</dd>
+					<dt></dt>
+					<dd>
+						<button type="button" name="treeClear" onclick="swfobject.getObjectById('roamer').clearGraphData()">Clear Graph</button>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<h1>Relationship Key</h1>
+		<div id="panelkey" class="relPanel">
+			<table cellspacing="10px">
+				<col width="30%">
+				<col width="70%">
+				<thead>
+					<th>Colour</th>
+					<th>Relationship</th>
+				</thead>
+				<tbody>
+					<?php foreach($this->relKey as $value) {
+						  $parts = explode(' ',$value); 
+						  $colour = $parts[0];
+						  array_shift($parts);
+						  $name = implode(' ',$parts);?>
+					<tr>
+						<td bgcolor="#<?= $colour ?>">&nbsp;</td>
+						<td><?= $name ?></td>
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div id="rightPane">
+	<div id="panelRight" class='relPanel'>
+		<div id="roamer"></div>
+	</div>
+</div>
+
+	

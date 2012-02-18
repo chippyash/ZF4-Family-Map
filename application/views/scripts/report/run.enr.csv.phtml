@@ -1,0 +1,13 @@
+<?php
+echo "Uid,Style,FName,LName,Attendance,Percentage";
+echo PHP_EOL;
+$avgAtt = 0; $avgPercent = 0;
+foreach ($this->data as $item) { 
+	echo "{$item['uid']},{$item['style']},{$item['fName']},{$item['lName']},{$item['count']},{$item['percent']}";
+	echo PHP_EOL;
+	$avgAtt += $item['count'];
+	$avgPercent += $item['percent'];
+}
+echo "Total Possible Attendances,{$this->data[0]['tot']}" .PHP_EOL;
+echo "Average Attendances," . sprintf('%01.2f',$avgAtt/count($this->data)) .PHP_EOL;
+echo "Average Percentage Attendances," . sprintf('%01.2f',$avgPercent/count($this->data)) . PHP_EOL;

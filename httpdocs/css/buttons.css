@@ -1,0 +1,134 @@
+
+button, 
+a.button, 
+input.button{
+	font-size:1.3em;
+	padding:0.8em 0.8em 0.8em 0.8em;
+	border:1px solid #ccc;
+	cursor:pointer;
+	color:#666666;
+	background-color:#FFF;
+	text-decoration:none;
+	background:none!important; /* remove all other backgrounds first */
+	background-image:url(../images/button_background_up.gif)!important;
+	background-position:bottom!important;
+	background-repeat:repeat-x!important;
+}
+a.button, 
+input.button{
+	display:inline-block;
+	padding:0.85em 0.85em 0.85em 0.85em;
+	font-size:1.3em;
+}
+button:hover, 
+a.button:hover, 
+input.button:hover{
+	background-image:url(../images/button_background_over.gif)!important;
+	background-position:bottom!important;
+	background-color:#ccc;
+	border-color:#999;
+	color:#000;
+}
+button:active, 
+a.button:active, 
+input.button:active{
+	background-image:url(../images/button_background_down.gif)!important;
+	background-position:top!important;
+	background-color:#fff;
+	border-color:#999;
+	color:#000;
+	outline:none;
+}
+
+button.disabled, 
+a.button.disabled, 
+input.button.disabled{
+	background-color:#eee;
+	border-color:#ddd;
+	background-image:none;
+	color:#bbb;
+	cursor:default;
+}
+button.disabled .icon, 
+a.button.disabled .icon, 
+input.button.disabled .icon{
+	opacity:0.5;
+}
+
+/* SMALL *********************/
+button.small, 
+a.button.small, 
+input.button.small{
+	padding: 0.4em 0.7em 0.4em 0.4em ;
+	background-image:url(../images/button_background_up_small.gif);
+}
+button.small:hover, 
+a.button.small:hover, 
+input.button.small:hover{background-image:url(../images/button_background_over_small.gif);}
+
+button.small:active, 
+a.button.small:active, 
+input.button.small:active{background-image:url(../images/button_background_down_small.gif);}
+
+/* MEDIUM *********************/
+button.medium, 
+a.button.medium, 
+input.button.medium{
+	height:2.7em;	
+	padding: 0.6em;
+}
+
+button.iconOnly, 
+a.button.iconOnly, 
+input.button.iconOnly,
+button.textOnly, 
+a.button.textOnly, 
+input.button.textOnly{
+	border:none;
+	padding:0;
+	background-color: transparent !important;
+	background-position:0.2em 0.2em;
+	height:1em;
+	line-height:1em;
+	margin:0;
+}
+button.iconOnly .icon, 
+a.button.iconOnly .icon, 
+input.button.iconOnly .icon,
+button.textOnly .icon, 
+a.button.textOnly .icon, 
+input.button.textOnly .icon{
+	margin:0;
+}
+button.iconOnly .label, 
+a.button.iconOnly .label, 
+input.button.iconOnly .label{
+	display:none;
+}
+button.textOnly .icon, 
+a.button.textOnly .icon, 
+input.button.textOnly .icon{
+	display:none;
+}
+button.iconOnly:active, 
+a.button.iconOnly:active, 
+input.button.iconOnly:active{
+	color:#dc1d25;
+}
+
+button.noBackground,
+a.button.noBackground,
+input.button.noBackground{
+	background:none!important;
+	padding:0!important;
+	border:none!important;
+}
+
+/* BUTTON ICONS */
+button .icon,
+.button .icon{
+	float:left;
+	margin-right:0.4em;
+	width:16px;
+	height:16px;
+}

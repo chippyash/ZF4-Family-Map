@@ -1,0 +1,23 @@
+<h1>Import Complete</h1>
+<p><span class="icon warning"></span> File '<?= $this->file ?>' has been imported with errors, please see below for futher details.</p>
+
+<dl id="importErrorCount">
+	<dt><span class="icon errorLines"></span>Number of lines read:</dt>
+	<dd><?= $this->numLines ?></dd>
+	<dt><span class="icon errorLines"></span>Number of lines in error:</dt>
+	<dd><?= $this->errors ?></dd>
+</dl>
+
+<ul id="importDownload">
+	<li><span class="icon excel"></span>Click <a href="/import/download/format/file/type/file">here</a> to download the error lines file</li>
+</ul>
+
+<h2>Error details</h2>
+
+<div id="importErrors">
+	<ul>
+	<?php foreach ($this->log as $line) { ?>
+		<li><?= preg_replace('/^.*\(6\): /','',$line) ?></li>
+	<?php } ?>
+	</ul>
+</div>

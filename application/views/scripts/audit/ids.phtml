@@ -1,0 +1,9 @@
+<div class="topPanel">
+	<h1>Intrusion detection</h1>
+	<p>The list below shows a log of possible intrusion attempts.</p>
+</div>
+<table id="msgList"></table>
+<div id="msgListPager"></div>
+<hr>
+<?= $this->formButton('delLog','Empty Log',array('class'=>'trash','onclick'=>"parent.location='/audit/ids/rem/1'")); ?>
+

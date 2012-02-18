@@ -1,0 +1,65 @@
+/* Css for relationship dashboard */
+div#mainPane {
+	 width:101%;
+}
+div#leftPane{
+	float:left;
+	width: 28%;
+}
+div#rightPane{
+	width:70%;
+	float:right;
+}
+
+div.relPanel {
+	padding: 0px;
+	margin: 0px;
+}
+div.relPanel h2 {
+	font-size:1.3em;
+}
+div.relPanel h3 {
+	font-size:1.2em;
+}
+div.relPanel label, div.relPanel p, div.relPanel th, div.relPanel td {
+	font-size:1.0em;
+}
+/** Query input **/
+div#panelLeft {
+	padding-right:5px;
+}
+div.relMembers {
+	background-color: #d9d2c3;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #86704b;	
+}
+div.relControl {
+	background-color: #c3d9c7;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #4c8754;
+}
+div.relControl dl {
+	padding: 5px 10px;
+}
+div.relControl dl dt, div.relControl dl dd {
+	padding: 5px 10px;
+}
+div.relControl dl dd select, div.relControl dl dd button {
+	width:75px;
+}
+div#panelQuery select {
+	font-size:1.0em;
+	margin-right: 10px;
+	vertical-align:top;
+	width:250px;
+}
+/** Roamer **/
+div#panelRight {
+	margin-right:7px;
+}
+		
+.ui-accordion .ui-accordion-content {
+padding:1em 0.5em;
+}

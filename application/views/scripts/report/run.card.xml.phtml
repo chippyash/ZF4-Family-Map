@@ -1,0 +1,35 @@
+<table class="rptTable">
+	<thead>
+		<tr>
+			<th>Uid</th>
+			<th>Style</th>
+			<th>First Name</th>
+			<th>Middle Name</th>
+			<th>Last Name</th>
+			<th>Member Type</th>
+			<th>Initial Pin</th>
+			<th>Join Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php $class = 'odd'; foreach ($this->data as $item) { ?>
+			<tr class="<?= $class ?>">
+				<td><?= $item['uid']?></td>
+				<td><?= $item['style']?></td>
+				<td><?= $item['fName']?></td>
+				<td><?= $item['mName']?></td>
+				<td><?= $item['lName']?></td>
+				<td><?= $item['pType']?></td>
+				<td><?= $item['pin']?></td>
+				<td><?= ZF4_Date::date($item['jDate'])->get(Zend_Date::DATE_SHORT)?></td>
+			</tr>
+		<?php $class = ($class=='odd'?'even':'odd');} ?>
+	</tbody>
+	<tfoot>
+		<tr>
+		<td>Count</td>
+		<td><?= count($this->data) ?> records</td>
+		<td colspan="10">&nbsp;</td>
+		</tr>
+	</tfoot>
+</table>

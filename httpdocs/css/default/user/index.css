@@ -1,0 +1,26 @@
+.form_elements{
+	
+}
+
+#fName-container,
+#uEmail-container,
+#uPwd-container,
+#submit-container{
+	clear:left;	
+}
+#submit-label{display:none;}
+.element{
+	margin-bottom:1em;
+}
+	
+div#leftPane{width:35%;}
+div#rightPane{width:50%;margin-left:30px;}
+div.admin{
+	background-color: #add8e6;
+	border: 2px solid  #7f7f7f;
+	margin-left:40px;
+	padding:10px;
+	
+}
+
+

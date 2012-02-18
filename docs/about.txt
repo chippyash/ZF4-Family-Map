@@ -1,0 +1,66 @@
+About Family Map
+================
+
+History
+-------
+Family Map started life in 2010 as a paid for piece of work for 
+Woodnewton - A Learning Community, based in Corby, UK.  Woodnewton is a large 
+school with a lively, dedicated staff of professionals that provide care and 
+education for children aged 0 to 11.
+
+As part of the work they do, they have to secure funding, primarily from public
+sources.  As a result, they need to ensure that 
+a/ the services they provide are being targeted at the appropriate audiences
+b/ that service usage meets criteria set down by the funders
+c/ that they are not ignoring sections of their target population through lack
+   of knowledge of that population
+
+Family Map was created by ZF4 Business Limited (ZF4) to help achieve these 
+objectives.
+
+In Jan. 2012, it was decided that the software was of potential use to a large
+number of similar organisations and that the best way to spread the good news
+was to release it as Open Source software under the terms of the GNU Affero 
+General Public License (AGPL).  This would allow other schools and institutions
+to benefit from the work already done and ensure that any enhancements that are
+made by third parties can be rolled back into the product for the benefit of all.
+
+What is it
+----------
+
+Family Map is software that allows a school or similar organisation to enter
+member (customer) details including their address, service usage and relationships
+between the members.  The system can then display geographic information using
+the Google Maps API.  Schools can draw regional area overlays on the map and 
+have the system produce reports using this geographic information to ensure that
+service reach into target areas is being met.  The system also allows reporting
+based on a wide range of user definable criteria and relationship criteria, and
+allows the recording and reporting of service attendance.
+
+In the "paid for" version (see below), schools can graphically map relationships
+between members.
+
+Where is it going
+-----------------
+
+We hope that sufficient interest will be generated for Family Map that it becomes
+a viable alternative to the very expensive systems that schools are forced to
+use in the absence of such software as this being freely available.  We are also
+hoping that through community contribution, the system can be made somewhat more
+generic to make it useful for a broader audience.
+
+What is the 'paid for' version
+------------------------------
+The Community Edition of Family Map contains all the functionality that you need
+to run the system with one principle exception: It cannot display relationships
+graphically.  This is because the software to do this (Constellation Roamer, 
+by Asterisq - see http://asterisq.com/products/constellation/roamer/demo) is not
+free.  It is commercially available.  Nothing we can do about it, and actually,
+nor do we mind, as the developer has a right to make a charge for his labour.
+You can enable this feature in Family Map by purchasing the ZF4 addon pack which
+contains the Asterisq software, the necessary additional configuration to make
+it work with Family Map, and a license for use of the Constellation Roamer in a
+single instance of the system.
+
+Ashley Kitson
+Feb, 2012

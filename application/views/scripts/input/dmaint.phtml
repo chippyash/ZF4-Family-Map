@@ -1,0 +1,30 @@
+<?php $this->headScript()->appendScript('var _modeDemo='
+	. (APPLICATION_ENV == 'demo'?'true':'false') . ';'
+); ?>
+<div id="leftPane">
+	<h1>Data Maintenance</h1>
+	<p>Select data to edit</p>
+	<?php include(dirname(__FILE__) . '/maintmenu.phtml'); ?>
+</div>
+<div id="rightPane">
+	<table id="dataList"></table>
+	<div id="dataListPager"></div>
+	<div id="dmButtons">
+		<form id='dmDownload' action='' method='post' >
+			<input name='dnld' type='submit' value='Download' />
+		</form>
+		<form id='dmDelete' action='/input/log' method='post' >
+			<input id ='dellog' class='noshow' name='dellog' type='submit' value='Delete Log' onclick="javascript:return confirm('Delete log?')"/>
+		</form>	
+	</div>
+	<table id="dataDetList"></table>
+	<div id="dataDetListPager"></div>
+</div>
+<div id="uiError" class="noshow" title="Error">
+	<p id="errMsg"></p>
+</div>
+<div id='locEdit' class="noshow" title="Edit Location">
+	<div id="locMap" style="height:570px;width:600px;"></div>
+	<input id="locvalue" type="hidden" value="" />
+	<p>Drag marker to required location and click save</p>
+</div>

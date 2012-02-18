@@ -1,0 +1,19 @@
+Any software is in a state of constant amendment, whether due to bug fixing
+of the implementation of new or enhanced features.  Family Map is no different.
+
+The author of this software are particularly interested in seeking help with
+the following tasks:
+
+- Creation of a system installer to run once when application is first accessed.
+  The installer will carry out the installation steps required in the 
+  installation.txt file
+
+- Creation and maintenance of distribution packages for Debian and Fedora/Red Hat
+  based systems, i.e. .deb and .rpm packages that will locate the software in a
+  sane location and configure the vhost file and restart Apache.  The distribution
+  packages will also enforce necessary pre-requisite software dependencies.
+
+- Refactoring to make the software less specific to schools
+
+If you can help with these tasks, please do contact the author at GitHub where
+you got this software from or via ashley [at] zf4 [dot] biz

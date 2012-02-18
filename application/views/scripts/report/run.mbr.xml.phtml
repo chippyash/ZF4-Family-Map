@@ -1,0 +1,47 @@
+<table class="rptTable">
+	<thead>
+		<tr>
+			<th>Uid</th>
+			<th>Name</th>
+			<th>DOB</th>
+			<th>Age</th>
+			<th>Gender</th>
+			<th>Ethnicity</th>
+			<th>Lang</th>
+			<th>Type</th>
+			<th>Mobile</th>
+			<th>Tel</th>
+			<th>Email</th>
+			<th>Surgery</th>
+			<th>House</th>
+			<th>Post Code</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php $class = 'odd'; foreach ($this->data as $item) { ?>
+			<tr class="<?= $class ?>">
+				<td><?= $item['uid']?></td>
+				<td><?= $item['style'] . ' ' . $item['fName'] . ' ' . $item['lName']?></td>
+				<td><?= $item['dob']?></td>
+				<td><?= $item['age']?></td>
+				<td><?= $item['gender']?></td>
+				<td><?= $item['ethnicity']?></td>
+				<td><?= $item['lang']?></td>
+				<td><?= $item['pType']?></td>
+				<td><?= $item['mTel']?></td>
+				<td><?= $item['oTel']?></td>
+				<td><?= $item['email']?></td>
+				<td><?= $item['surgery']?></td>
+				<td><?= $item['hNum']?></td>
+				<td><?= $item['pCode']?></td>
+			</tr>
+		<?php $class = ($class=='odd'?'even':'odd');} ?>
+	</tbody>
+	<tfoot>
+		<tr>
+		<td>Count</td>
+		<td><?= count($this->data) ?> records</td>
+		<td colspan="10">&nbsp;</td>
+		</tr>
+	</tfoot>
+</table>

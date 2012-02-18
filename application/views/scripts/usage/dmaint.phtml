@@ -1,0 +1,13 @@
+<?php $this->headScript()->appendScript('var _modeDemo='
+	. (APPLICATION_ENV == 'demo'?'true':'false') . ';'
+); ?>
+<div id="leftPane">
+	<h1>Batch data entry</h1>
+	<p>Select data to input</p>
+	<?php include(dirname(__FILE__) . '/maintmenu.phtml'); ?>
+</div>
+<div id="rightPane">
+</div>
+<div id="uiError" class="noshow" title="Error">
+	<p id="errMsg"></p>
+</div>

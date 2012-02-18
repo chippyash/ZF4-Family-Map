@@ -1,0 +1,33 @@
+<p>Dear colleague,</p>
+<?php if (APPLICATION_ENV !== 'demo') { ?>
+<p>You have been given an account on the ZF4 Family Map system.  Your details are as follows;</p>
+
+<p>User id : <?= $this->uName ?></p>
+<p>Password: <?= $this->pwd ?></p>
+<br/>
+<p>Please sign on at http://fmlymap.zf4.biz</p>
+<?php } else { ?>
+<p>You have been given an account on the ZF4 Family Map demonstration system.  Your details are as follows;</p>
+
+<p>User id : <?= $this->uName ?></p>
+<p>Password: <?= $this->pwd ?></p>
+<br/>
+<p>Please sign on at http://demo.fmlymap.zf4.biz
+<br/>Your account is active for 14 days from today after which time it will be disabled</p>
+<p>All functionality on the system will be available to you except
+<ul>
+	<li>'My Account' page so please do not forget the password shown above.</li>
+	<li>Overlay drawing in the mapping display</li>
+	<li>Maintenance of system users</li>
+	<li>Downloads and deletions of system log messages</li>
+</ul>
+</p>
+<p>Please also note that the system data will be reset every 3 hours so any records you add and any changes you make will be reset back to the system default at that time.  This is to allow many people to use the system and prevent abuse of the system.</p>
+<p>Members have not been categorised, please feel free to assign them to categories</p>
+<p>The data used in the system is fictitious and as they say in the movies, no inference should be made from what you see to any person, living or dead.  Any similarity is coincidental.</p>
+
+<p>To access the documentation for the system, click on the documentation link at the bottom of each screen.  When you get to the documentation page, login using the user name and password of 'demodocs'</p>
+<p>If you find a bug or problem with the system please use the Issue Tracker (again linked in the page footer) and report the issue there. Please use the same email address that this email has been sent to, otherwise it will be ignored</p>
+<?php } ?>
+<p>Kind regards<br/>
+Ashley Kitson, ZF 4 Business Limited, UK</p>

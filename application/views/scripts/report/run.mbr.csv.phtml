@@ -1,0 +1,5 @@
+<?php
+echo "Uid,Style,FName,LName,DOB,Age,Gender,Ethnicity,Lang,Type,Mobile,Tel,Email,Surgery,House,PCode" . PHP_EOL;
+foreach ($this->data as $item) { 
+ 	echo "{$item['uid']},{$item['style']},{$item['fName']},{$item['lName']},{$item['dob']},{$item['age']},{$item['gender']},{$item['ethnicity']},{$item['lang']},{$item['pType']},{$item['mTel']},{$item['oTel']},{$item['email']},{$item['surgery']},{$item['hNum']},{$item['pCode']}" . PHP_EOL; 
+}

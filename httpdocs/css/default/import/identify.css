@@ -1,0 +1,47 @@
+ul#dataMaintList,
+ul#dataMaintList li {
+	list-style:none;
+	margin:0 10px;
+	padding:5px;
+	font-size: 1.20em ;
+	font-weight: bold;
+	color:#003b4a;
+}
+.dmOdd{background-color:#7da170;}
+.dmEven{background-color:#a5d494;}
+
+ul#dataMaintList li:hover {
+	background-color:#69875f;
+	color:#007fa0;
+}
+ul#dataMaintList li.dmSel{
+	background-color:#007fa0;
+	color:#a12000;
+}
+
+table.zend_form {
+	background-color:#ccf0a7;
+}
+
+table.zend_form tr {
+	padding-top:10px;
+}
+
+table.zend_form th{
+	background-color:#a5d494;
+	padding: 20px 0;
+}
+table.zend_form tr.lastrow td {
+	background-color:#a5d494;
+	padding: 20px 40px;
+}
+
+table.zend_form tr td {
+
+	padding:0 20px;
+}
+
+dt#prfnm-label {
+	padding-top: 30px;
+}
+

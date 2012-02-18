@@ -1,0 +1,41 @@
+		<script type="text/javascript" src="/constellation_roamer/swfobject.js"></script>
+		<script type="text/javascript">
+			
+			var flashvars = {
+				config_url: '/constellation_roamer/constellation_config.xml',
+				selected_node_id: '1',
+				instance_id: '1',
+				passthru: escape('myVar0=value&myVar1=3.4'),
+				debug: false
+			};
+			
+			var params = {
+				bgcolor: '#ffffff',
+				allowScriptAccess: 'sameDomain',
+				quality: 'high',
+				scale: 'noscale'
+			};
+			
+			var attributes = {
+				id: "constellation_roamer",
+				name: "constellation_roamer"
+			};
+			
+			swfobject.embedSWF(
+				"/constellation_roamer/constellation_roamer.swf", "placeholder", "100%", "100%",
+				"9", "/constellation_roamer/expressInstall.swf", flashvars, params, attributes);
+
+		</script>
+		
+		<style type="text/css">
+			html, body
+			{
+				border: 0;
+				height: 100%;
+				margin: 0;
+				overflow: hidden;
+				padding: 0;
+				width: 100%;
+			}
+		</style>
+		<div id="placeholder"></div>

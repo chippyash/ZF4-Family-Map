@@ -1,0 +1,5 @@
+<?php
+echo "Uid,Style,FName,MName,LName,Type,Pin,JoinDate" . PHP_EOL;
+foreach ($this->data as $item) { 
+ 	echo "{$item['uid']},{$item['style']},{$item['fName']},{$item['mName']},{$item['lName']},". str_replace(',','-',$item['pType']) . ",{$item['pin']}," . ZF4_Date::date($item['jDate'])->get(Zend_Date::DATE_SHORT) . PHP_EOL; 
+}

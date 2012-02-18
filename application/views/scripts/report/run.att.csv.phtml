@@ -1,0 +1,41 @@
+<?php
+//we have to tilt the data around for display
+$keys = $this->data['keys'];
+unset($this->data['keys']);
+//create array keyed by date
+$dates = array_keys($this->data);
+$dates = array_flip($dates);
+ksort($dates);
+foreach ($dates as &$date) {$date=0;}
+//tilt the data array
+$tilt = array();
+unset($date);
+foreach ($this->data as $date=>$attendees) {
+	foreach ($attendees as $attendee) {
+		if (array_key_exists($attendee['uid'],$keys)) {
+			unset($keys[$attendee['uid']]);
+			$tilt[$attendee['uid']] = $attendee + $dates;
+		}
+	}
+}
+//fill the tilted data array
+foreach ($this->data as $date=>$attendees) {
+	foreach ($attendees as $attendee) {
+		$tilt[$attendee['uid']][$date] = 1;
+	}
+}
+ksort($tilt);
+
+echo "Uid,Style,FName,LName";
+foreach ($dates as $date=>$v) {
+	echo ",{$date}";
+}
+echo PHP_EOL;
+foreach ($tilt as $item) { 
+	echo "{$item['uid']},{$item['style']},{$item['fName']},{$item['lName']}";
+	foreach ($dates as $date=>&$count) {
+		$yn = ($item[$date] == 1 ? 'Yes' : 'No');
+		echo ",{$yn}";
+	}
+	echo PHP_EOL;
+}

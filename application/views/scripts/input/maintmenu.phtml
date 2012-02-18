@@ -1,0 +1,27 @@
+	<ul id="dataMaintList">
+	<?php 
+		$rowClass = 'dmEven';
+		$nav = new Zend_Navigation(new Zend_Config_Xml(ZF4_BASE_PATH. '/application/config/navigation.xml','main'));
+		$subMenu = $nav->findOneBy('resource','default_input_index');
+		$acl = Application_Model_Acl::getACL();
+		$user = ZF4_User::getSessionIdentity();
+
+		foreach ($subMenu as $page) { 
+			$parts = explode('_',$page->resource);
+			$tag = $parts[2];
+			$id = 'dm' . ucfirst($tag);
+			$canSee = false;
+			foreach ($user['roles'] as $role) {
+				if ($acl->isAllowed($role,$page->resource)) {
+					$canSee = true;
+					break;
+				}
+			}
+			if ($canSee) {
+			?>
+			<li id="<?= $id ?>" class="<?= $rowClass ?>" title="<?= $page->title ?>" onclick="javascript:dmSel(this,'<?= $tag ?>')"><?= $page->label?></li>
+		<?php 
+			$rowClass = ($rowClass == 'dmEven' ? 'dmOdd' : 'dmEven'); }
+		}
+	?>
+	</ul>

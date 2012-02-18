@@ -1,0 +1,30 @@
+<div class="panel11" id="register_thanks">
+	<div id="panel11top">
+		<div id="panel11midmakeup">
+			<div id="col22">
+				<h1 class="disnon">Register > Thanks</h1>
+				<h2>You go, girls!</h2>
+
+				<p>Thanks for signing up to SHE-TIME! You're now on your way to tons of tempting rewards - 
+				and you can share lots of them with your friends. If you've got some SHE-TIME codes ready to go, enter them now to bank your points 
+				and start rewarding yourself!
+				</p>
+    	
+				<a href="/account/bank" class="bankyourpoints" title="click here to bank your points"></a>
+				<div class="noBankYourPoints disnon" style="height:48px;width:1px;"></div>
+	    		<a href="/reward/all" class="viewourrewards" title="click here to view our rewards"></a>
+	    	</div>
+		</div>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+//when dom loaded
+$(function(){
+		if (_role == 'rEmployee') {
+			$('a.bankyourpoints').hide();
+			$('div.noBankYourPoints').show();
+		}
+});
+//]]>
+</script>

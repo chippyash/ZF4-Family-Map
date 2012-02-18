@@ -1,0 +1,24 @@
+<div class="panel11" id="forgottenpassword">
+	<div id="panel11midtea">
+		<div id="col22">
+			<h1 class="disnon">Forgotten password</h1>
+		        
+
+			<?php if (!is_null($this->form)) {?>
+				<h2>Have you forgotten your password?</h2>
+				<p>Please enter the email address that you have on file and 
+				we will send you your password! In the meantime, why not browse 
+				the site and have a look at all our gorgeous rewards!</p>
+				
+				<?= echo $this->form; ?>
+			<?php } else { //display confirmation message ?>
+				<h2>Password sent</h2>
+				<p>OK, your new passsword has been sent to your email address.  When you get it
+				log in to this website and don't forget to change the password in your profile
+				to something only you know.  In the meantime, why not browse 
+				the site and have a look at all our gorgeous rewards!</p>
+			<?php } ?>
+		
+		</div>	
+	</div>
+</div>

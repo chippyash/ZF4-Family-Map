@@ -1,0 +1,10 @@
+RewriteEngine On
+#RewriteRule !\.(js|ico|gif|jpg|png|css|html|pl|swf|html|csv|xml)$ [OR]
+#RewriteCond \.html$
+#RewriteRule ^(.*)$ $1 [NC,L]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]

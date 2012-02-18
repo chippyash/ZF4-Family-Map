@@ -1,0 +1,52 @@
+<div class="enrTable">
+	<h3>Services that you can enroll for</h3>
+	<table class="enrTable">
+		<thead>
+			<tr>
+				<th align="left">Service</th>
+				<th align="left">Status</th>
+				<th align="left">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php $class = 'odd'; foreach ($this->enrollments as $enrollment) { ?>
+			<tr class="<?= $class ?>">
+				<td align="left" title="<?= $enrollment['extInfo'] ?>"><?= $enrollment['name'] ?></td>
+				<td align="left"><?= ($enrollment['status'] == 'enrolled' ? 'Enrolled' : 
+						 ($enrollment['status'] == 'waiting' ? 'Waiting list' :
+						  ($enrollment['status'] == 'past' ? 'Previously enrolled' :'Not enrolled'))) ?></td>
+				<td align="left">
+				<button value="<?= ($enrollment['status'] == 'enrolled' || $enrollment['status'] == 'waiting' ? 'del' : 'add') ?>" onclick="enroll($(this).val(),<?= $enrollment['id'] ?>)">
+				<?= ($enrollment['status'] == 'enrolled' || $enrollment['status'] == 'waiting' ? 'Remove' : 'Enroll') ?>
+				</button>
+				</td>
+			</tr>
+		<?php $class = ($class=='odd'?'even':'odd');}	?>
+		</tbody>
+	</table>
+</div>
+<div class="enrTable">
+	<h3>Other services that you can use</h3>
+	<table class="enrTable">
+		<thead>
+			<tr>
+				<th align="left">Service</th>
+				<th align="left">Availability</th>
+				<th align="left">Status</th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php 
+			$class = 'odd'; 
+			foreach ($this->otherServices as $service) { ?>
+			<tr class="<?= $class ?>">
+				<td align="left" title="<?= $service['extInfo'] ?>"><?= $service['name'] ?></td>
+				<td align="left"><?= ($service['enrolType'] == 'free' ? 'Just turn up!' : 'Contact service provider') ?></td>
+				<td align="left"><?= ($service['status'] == 'enrolled' ? 'Enrolled' : 
+						 ($service['status'] == 'waiting' ? 'Waiting list' :
+						  ($service['status'] == 'user' ? 'User' : 'Not a user'))) ?></td>
+			</tr>
+		<?php $class = ($class=='odd'?'even':'odd');}	?>
+		</tbody>
+	</table>
+</div>

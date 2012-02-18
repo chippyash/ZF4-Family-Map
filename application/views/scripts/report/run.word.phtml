@@ -1,0 +1,23 @@
+<?php 
+Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer')->setNoRender(true);
+if ($this->hasreport) {
+	ob_start();
+	include ('run.xml.phtml');
+	$output = ob_get_contents();
+} else {
+	$output = "<p>Sorry - there is no data to match your query</p>";
+}
+$html = <<<EOT
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+{$output}
+</body>
+</html>
+EOT;
+ob_end_clean();
+header('Content-type: application/msword');
+header('Content-Disposition: attachment; filename="'.$this->rptType.'.doc"');
+echo $html; exit;

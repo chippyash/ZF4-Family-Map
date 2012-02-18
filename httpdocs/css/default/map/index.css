@@ -1,0 +1,100 @@
+/* Css for map dashboard */
+div#mainPane {
+	 width:101%;
+}
+div.mapPanel {
+	min-height:540px;
+	float:left;
+	padding: 0px;
+	margin: 0px;
+}
+div.mapPanel h2 {
+	font-size:1.3em;
+}
+div.mapPanel h3 {
+	font-size:1.2em;
+}
+div.mapPanel label, div.mapPanel p, div.mapPanel th, div.mapPanel td {
+	font-size:1.0em;
+}
+/** Query input **/
+div#panelLeft {
+	width: 28%;
+	padding-right:5px;
+}
+div#panelQuery span.mapSelCheck {
+	margin-right: 10px;
+	vertical-align:top;
+}
+div.mapMembers {
+	background-color: #d9d2c3;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #86704b;	
+}
+div.mapCategories {
+	background-color: #c3d9c7;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #4c8754;
+}
+div.mapServices {
+	background-color: #c3cad9;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #4c6187;
+}
+div.mapSave {
+	background-color: #d9c3d5;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #874c7f;
+}
+div.mapSelect {
+	float: right;
+	margin-right:20px;
+}
+
+/** drawing controls **/
+div#panelDraw {
+
+}
+
+img.drawBtn {
+	margin: 13px;
+	
+}
+
+/** Map display **/
+div#panelMap {
+	width: 60%;
+	border-left: 2px solid #7da170;
+	border-right: 2px solid #7da170;
+	padding: 0px 0px 0px 7px;	
+}
+img#mapWaiting {
+	z-index:100;
+	position: relative;
+	top:137px;
+	left:273px;
+}
+
+/** Map control **/
+div#panelCtrl {
+	width: 9%;
+	background-color:#a8d5e0;
+	border: 2px solid  #007fa0;
+	margin-left: 5px;
+	min-height:600px;
+	
+}
+
+div#panelCtrl img {
+	margin: 10px 5px;	
+}
+
+div#panelQuery {
+	padding:10px 10px;
+}
+
+		

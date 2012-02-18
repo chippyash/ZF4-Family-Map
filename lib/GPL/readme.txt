@@ -1,0 +1,2 @@
+This directory contains GPL licenses software that is used within the ZWare Framework
+ZWare classes can be derived from classes contained in this directory and can extend them.  No modification of the original classes is done.

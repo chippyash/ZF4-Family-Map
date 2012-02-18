@@ -1,0 +1,20 @@
+<?php
+//header('Content-type: application/octet-stream');
+header('Content-Disposition: attachment; filename="'.$this->rptType.'.csv"');
+if ($this->hasreport) { 
+	include('run.' . $this->rptType . '.csv.phtml');
+	echo PHP_EOL . PHP_EOL;
+	echo "Report Title:,{$this->title}" . PHP_EOL;
+	echo "Report Date:,{$this->date}" . PHP_EOL;
+	echo "Criteria Was:" . PHP_EOL;
+	foreach ($this->where as $criteria) {
+		$v = str_replace(',','-',str_replace("'",'',$criteria));
+		echo ",{$v}" . PHP_EOL;
+	}
+	echo "Created By:,{$this->user('uName')}" . PHP_EOL;
+	echo "Created With:,Family Map from ZF4 Business Limited UK (http://zf4.biz)" . PHP_EOL;
+	$org = str_replace(',',' ',$this->org('name'));
+	echo "Data copyright (c):,{$org}" . PHP_EOL;
+} else {
+	echo "Sorry - there is no data to match your query" . PHP_EOL;
+}

@@ -1,0 +1,23 @@
+<div class="topPanel">
+	<h1>Oops - An error occurred</h1>
+	<p><span class="icon error"></span><?php echo $this->message ?></p>
+</div>
+
+<a href="javascript:void(null);" onclick="javascript:history.go(-1);" class="button back">Go back</a>
+
+<?php if ('development' == $this->env || 'testing' == $this->env): ?>
+
+		<h3>Exception information:</h3>
+		<p>
+	    	<b>Message:</b> <?php echo $this->exception->getMessage() ?>
+		</p>
+		
+		<h3>Stack trace:</h3>
+		<pre><?php echo $this->exception->getTraceAsString() ?>
+		</pre>
+		
+		<h3>Request Parameters:</h3>
+		<pre><?php echo var_export($this->request->getParams(), 1) ?>
+		</pre>
+		
+<?php endif ?>

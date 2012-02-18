@@ -1,0 +1,28 @@
+
+.screenOnly{visibility:hidden;}
+.printOnly{display:inherit;}
+
+body{background:none;}
+
+button,.button{display:none!important;}
+
+#header{height:12em;}
+#headerInfo{font-size:1.4em;}
+#navigation{display:none;}
+
+#header #logo{background:none;} /* hide the screen logo */
+#header #logo img.printOnly{
+	display:block;
+	width:12cm;
+}
+
+h1{font-size:3em;}
+h2{font-size:2.8em;}
+h3{font-size:2.6em;}
+
+.ui-selectmenu{border:none!important;}
+.ui-selectmenu-icon{background:none!important;}
+
+
+#printCover{}
+#printCover{page-break-after:always;}

@@ -1,0 +1,62 @@
+<?php
+	//we have to tilt the data around for display
+	$keys = $this->data['keys'];
+	unset($this->data['keys']);
+	//create array keyed by date
+	$dates = array_keys($this->data);
+	$dates = array_flip($dates);
+	ksort($dates);
+	foreach ($dates as &$date) {$date=0;}
+	//tilt the data array
+	$tilt = array();
+	unset($date);
+	foreach ($this->data as $date=>$attendees) {
+		foreach ($attendees as $attendee) {
+			if (array_key_exists($attendee['uid'],$keys)) {
+				unset($keys[$attendee['uid']]);
+				$tilt[$attendee['uid']] = $attendee + $dates;
+			}
+		}
+	}
+	//fill the tilted data array
+	foreach ($this->data as $date=>$attendees) {
+		foreach ($attendees as $attendee) {
+			$tilt[$attendee['uid']][$date] = 1;
+		}
+	}
+	ksort($tilt);
+?>
+<table class="rptTable">
+	<thead>
+		<tr>
+			<th>Uid</th>
+			<th>Style</th>
+			<th>FName</th>
+			<th>LName</th>
+			<?php foreach ($dates as $date=>$v) { ?>
+			<th><?= $date ?></th>	
+			<?php } ?>
+		</tr>
+	</thead>
+	<tbody>
+		<?php $class = 'odd'; foreach ($tilt as $item) { ?>
+			<tr class="<?= $class ?>">
+				<td><?= $item['uid']?></td>
+				<td><?= $item['style'] ?></td>
+				<td><?= $item['fName']?></td>
+				<td><?= $item['lName']?></td>
+				<?php foreach ($dates as $date=>&$count) { ?>
+				<td align="center"><img src="<?= $this->logoUrl ?>icons/<?= ($item[$date] == 1 ? 'tick.png' : 'cross.png') ?>" alt="<?= ($item[$date] == 1 ? 'Yes' : 'No') ?>" /></td>
+				<?php $count += ($item[$date] == 1 ? 1 : 0);} ?>
+			</tr>
+		<?php $class = ($class=='odd'?'even':'odd');} ?>
+	</tbody>
+	<tfoot>
+		<tr>
+		<td colspan="4">Count</td>
+		<?php foreach ($dates as $date=>$v) { ?>
+		<td align="center"><?= $v ?></td>
+		<?php } ?>
+		</tr>
+	</tfoot>
+</table>

@@ -1,0 +1,27 @@
+<div class="panel11" id="register">
+	<div id="panel11midwhitetop2"></div>
+	<div id="panel11midhiding">
+		<div class="col11">
+			<h1 class="disnon">Register</h1>
+			<h2>Register for guaranteed rewards</h2>
+			<p>Just enter your details to start banking and spending your SHE-TIME points!</p>
+		</div>	
+		<?= $this->form; ?>
+		<div id="submitTerms">By clicking submit you agree to the <a href="/info/tandc" target="_blank">terms and conditions</a></div>
+	</div>
+	<div id="panel11midwhitebot"></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function(){checkPCode();});
+function checkPCode() {
+	if ($('#country option:selected').val() == 'UK') {
+		$('#pCode').show();
+		$('#pCode-label').show();
+	} else {
+		$('#pCode').hide();
+		$('#pCode-label').hide();
+	}
+}
+//]]>
+</script>

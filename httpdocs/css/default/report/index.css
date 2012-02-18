@@ -1,0 +1,145 @@
+/* Css for report dashboard */
+div#mainPane {
+	 width:101%;
+}
+div.reportPanel {
+	padding: 0px;
+	margin: 0px;
+}
+div.reportPanel h2 {
+	font-size:1.3em;
+}
+div.reportPanel h3 {
+	font-size:1.2em;
+}
+div.reportPanel label, div.reportPanel p, div.reportPanel th, div.reportPanel td {
+	font-size:1.0em;
+}
+/** Query input **/
+div#panelLeft {
+	padding-right:5px;
+}
+div#panelQuery span.reportSelCheck {
+	margin-right: 10px;
+	vertical-align:top;
+}
+div.reportMembers {
+	background-color: #d9d2c3;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #86704b;	
+}
+div.reportCategories {
+	background-color: #c3d9c7;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #4c8754;
+}
+div.reportServices {
+	background-color: #c3cad9;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #4c6187;
+}
+div.reportFilter {
+	background-color: #7095a1;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #4c6187;
+}
+div.reportSave {
+	background-color: #d9c3d5;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #874c7f;
+}
+div.reportOverlay {
+	background-color: #d9c3d5;
+	padding:3px;
+	margin:0px 10px 10px 0px;
+	border: 2px solid  #874c7f;
+}
+div.reportSelect {
+	float: right;
+	margin-right:20px;
+}
+
+div.reportSelSrvc select, div.reportCategories select, div.reportSave select {
+	width:230px;
+}
+input.datepicker {
+	width:150px;
+}
+span.ui-datepicker-append {
+	padding-left:10px;
+}
+
+/** Report display **/
+div#rightPane {
+	border-left: 2px solid #7da170;
+	border-right: 2px solid #7da170;
+	padding: 0px 0px 0px 7px;	
+	min-height:700px;
+
+}
+div#report {
+	background-color:white;
+	padding-right:10px;
+}
+div.rptHeader {
+	border-bottom:2px solid #7da170;
+}
+
+div.rptCriteria {
+	border-bottom:2px solid #7da170;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+span.rptCriteria {
+	display:block;
+	width:32%;
+	float:left;
+}
+div.rptBody {
+
+}
+
+div.rptFooter{
+	border-bottom:2px solid black;
+	border-top:2px solid black;
+	height:40px;
+	padding-top:10px;
+}
+
+span.rptTitle {
+	display:block;
+	float:right;
+	font-size:2em;
+	padding-right:40px;
+}
+
+span.rptDate, span.rptUser, span.rptCopy {
+	display:block;
+	width:30%;
+	float:left;
+}
+span.rptCopy {
+	float:right;
+}
+table.rptTable {
+	width:100%;
+}
+table.rptTable tbody tr.odd {
+	background-color:#e5f9ff;
+}
+table.rptTable tbody tr.even {
+	background-color:#ede4d8;
+}
+
+table.rptTable tfoot tr td {
+	border-top:2px solid #7da170;
+}
+
+div#panelQuery {
+	padding:10px 10px;
+}

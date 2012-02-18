@@ -1,0 +1,55 @@
+<?php 
+//get interval headings
+$intervals = array();
+reset($this->data);
+$t = current($this->data);
+foreach ($t as $key=>$ival) {
+	$parts = explode('|',$key);
+	$intervals[$key] = $parts[1];
+}
+reset($this->data);
+?>
+<table class="rptTable">
+	<thead>
+		<tr>
+			<th>Service</th> 
+			<?php foreach ($intervals as &$interval) { ?>
+				<th><?= $interval ?></th>
+			<?php 
+				$interval = 0;
+			} ?>
+			<th>Total</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php 
+			$class = 'odd'; 
+			$grandTot = 0;
+			foreach ($this->data as $service=>$item) { ?>
+			<tr class="<?= $class ?>">
+				<td><?= $service ?></td>
+				<?php 
+					$tot = 0;
+					foreach ($intervals as $key=>&$interval) { ?>
+					<td align="center"><?= $item[$key] ?></td>
+				<?php 
+					$tot += $item[$key];
+					$interval += $item[$key];
+				} ?>
+				<td align="center"><?= $tot ?></td>
+			</tr>
+		<?php 
+			$class = ($class=='odd'?'even':'odd');
+			$grandTot += $tot;
+			} ?>
+	</tbody>
+	<tfoot>
+		<tr>
+		<td>Count</td>
+		<?php foreach($intervals as $value) { ?>
+			<td align="center"><?= $value ?></td>
+		<?php } ?>
+		<td align="center"><?= $grandTot ?></td>
+		</tr>
+	</tfoot>
+</table>

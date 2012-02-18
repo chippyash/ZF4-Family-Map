@@ -1,0 +1,17 @@
+div#panelLeft, div#panelMid, div#panelRight {
+	width:27%;
+	min-height:400px;
+	float:left;
+	margin: 0px 20px;
+	
+}
+div#panelMid {
+	border-left: 2px solid #7da170;
+	border-right: 2px solid #7da170;
+	padding: 0px 20px;	
+}
+
+dt {
+	color:#a12000;
+	font-size: 1.2em;
+}

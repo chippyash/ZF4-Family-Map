@@ -1,0 +1,24 @@
+<?php $this->headScript()->appendScript('var _modeDemo='
+	. (APPLICATION_ENV == 'demo'?'true':'false') . ';'
+); ?>
+<div id="leftPane">
+	<h1>Data Maintenance</h1>
+	<p>Select data to edit</p>
+	<?php include(dirname(__FILE__) . '/maintmenu.phtml'); ?>
+</div>
+<div id="rightPane">
+    <h2>Data Backup</h2>
+    <p>This facility will create a SQL dump file suitable for re-installing the
+        data for your organisation for this system</p>
+    <p>It is your responsibility to ensure that you have a current backup of data
+    in the event of systems failure as due to our terms of service (in particular,
+    the bit about us not knowing anything about your data,) we don't keep backup
+    copies of your data so it cannot be compromised by third parties.</p>
+    <p>If you just need data from a particular table, use the download button in the
+    relevant maintenance screen to create a CSV file that you can read into a
+    spreadsheet or similar.</p>
+    <form id="dmBackup" action="/input/backup/format/sql" method="post">
+        <input type="submit" value="Create backup" name="backup">
+</form>
+</div>
+

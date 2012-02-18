@@ -1,0 +1,67 @@
+
+#header #navigation{
+	position:absolute;
+	top:11.5em;
+	margin-left:-1em;
+}
+#header #navigation ul{
+	margin-top:-0.2em;
+}
+#header #navigation ul li{
+	background-color:#fff;
+	padding:0;
+	border:none;
+}
+#header #navigation ul li a,
+#header #navigation ul li span{
+	padding:0.5em;
+	text-decoration:none;
+	color:#666;
+	background-color:#fff;
+	display:block;
+	font-size:1.8em;
+	font-weight:normal;
+}
+#header #navigation ul li ul li a,
+#header #navigation ul li ul li span{
+	font-size:1.4em;
+}
+#header #navigation ul li ul{
+	border:1px solid #ccc;
+}
+#header #navigation a.selected,
+#header #navigation span.selected{
+	color:#dc1d25;
+}
+#header #navigation ul.selected{}
+#header #navigation ul a:hover,
+#header #navigation ul span:hover{
+	color:#dc1d25;
+}
+#header #navigation ul a:active,
+#header #navigation ul span:active{
+	background-color:#eee;
+}
+#header #navigation a,
+#header #navigation span{
+	border:1px solid white;	
+}
+#header #navigation li:hover a,
+#header #navigation li:hover span{
+	border:1px solid #ccc;
+}
+#header #navigation li:hover span{
+	border-bottom:none!important;
+}
+#header #navigation ul li ul li a,
+#header #navigation ul li ul li:hover a{
+	border:1px solid white!important;
+}
+
+/* .parent is assigned by jquery */
+#header #navigation .parent{
+	margin-right:0.4em;
+	padding-right:0.6em!important;
+	background:url(/images/icons/navigation_parent_icon.png) no-repeat;
+	background-position:100% 100%;
+}

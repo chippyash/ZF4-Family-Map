@@ -1,0 +1,24 @@
+<?php echo $this->doctype(); ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<!-- Family Map - A social mapping system for community organisations-->
+   	<!-- copyright: Woodnewton - A Learning Community, UK, 2010          -->
+   	<!--            http://www.woodnewton.northants.sch.uk/              -->
+        <!-- copyright: ZF 4 Business Ltd, UK, 2010                          -->
+        <!--            http://zf4.biz                                       -->
+   	  <?php
+   	  echo $this->headTitle();
+	  echo $this->headLink();
+	  echo $this->headStyle();
+	  echo $this->headScript();
+	  echo $this->headMeta();
+	  ?>
+
+	</head>
+	<body>
+		<div class="content">
+	  		<?php echo $this->layout()->content ?>
+		</div>
+	</body>
+</html>

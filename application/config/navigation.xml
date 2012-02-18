@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<configdata>
+	<!--
+	System Menu - visibility is controlled by ACL
+	-->
+    <main>
+        <dashboard>
+            <label>Mapping</label>
+            <uri>/map/index</uri>
+            <id>m1</id>
+            <resource>default_map_index</resource>
+            <title>Family Map Queries</title>
+            <keywords></keywords>
+            <description>Query the system</description>
+        </dashboard>
+        <rels>
+            <label>Relationships</label>
+            <uri>/rel/index</uri>
+            <id>m2</id>
+            <resource>default_rel_index</resource>
+            <title>Family Map Relationships</title>
+            <keywords></keywords>
+            <description>View relationships between people</description>
+        </rels>
+        <reports>
+            <label>Reporting</label>
+            <uri>/report/index</uri>
+            <id>m3</id>
+            <resource>default_report_index</resource>
+            <title>Family Map Reports</title>
+            <keywords></keywords>
+            <description>Run system reports</description>
+        </reports>
+        <input>
+            <label>Usage</label>
+            <uri>/usage/index</uri>
+            <id>m4</id>
+            <resource>default_usage_index</resource>
+            <title>Service Usage Entry</title>
+            <keywords></keywords>
+            <description>Input service usage data</description>
+            <pages>
+                <input_batch>
+                    <label>Batch</label>
+                    <title>Batch usage data entry</title>
+                    <description>Add service usage in batch mode</description>
+                    <id>m4-1</id>
+                    <uri>/usage/batch</uri>
+                    <resource>default_usage_batch</resource>
+                    <visible>0</visible>
+                </input_batch>
+                <input_register>
+                    <label>Register</label>
+                    <title>Enrolled services register</title>
+                    <description>Complete register for an enrolled service</description>
+                    <id>m4-2</id>
+                    <uri>/usage/register</uri>
+                    <resource>default_usage_register</resource>
+                    <visible>0</visible>
+                </input_register>
+            </pages>
+        </input>
+        <maint>
+            <label>Maintenance</label>
+            <uri>/input/index</uri>
+            <id>m5</id>
+            <resource>default_input_index</resource>
+            <title>System data maintenance</title>
+            <keywords></keywords>
+            <description>Amend system static data</description>
+            <pages>
+                <maint_cust>
+                    <label>Members</label>
+                    <title>Member maintenance</title>
+                    <description>Amend members and their relationships</description>
+                    <id>m5-1</id>
+                    <uri>/input/cust</uri>
+                    <resource>default_input_cust</resource>
+                    <visible>0</visible>
+                </maint_cust>
+                <maint_staff>
+                    <label>Staff</label>
+                    <title>Staff maintenance</title>
+                    <description>Amend your organisation's staff details</description>
+                    <id>m5-2</id>
+                    <uri>/input/staff</uri>
+                    <resource>default_input_staff</resource>
+                    <visible>0</visible>
+                </maint_staff>
+                <maint_ancillary>
+                    <label>Other Professionals</label>
+                    <title>Ancillary staff maintenance</title>
+                    <description>Amend ancillary and other professionals associated with your organisation</description>
+                    <id>m5-3</id>
+                    <uri>/input/ancillary</uri>
+                    <resource>default_input_ancillary</resource>
+                    <visible>0</visible>
+                </maint_ancillary>
+                <maint_srvc>
+                    <label>Services</label>
+                    <title>Service maintenance</title>
+                    <description>Amend service details</description>
+                    <id>m5-4</id>
+                    <uri>/input/srvc</uri>
+                    <resource>default_input_srvc</resource>
+                    <visible>0</visible>
+                </maint_srvc>
+                <maint_enroll>
+                    <label>Enrollments</label>
+                    <title>Manage enrollments to services</title>
+                    <description>Edit service enrollments</description>
+                    <id>m5-5</id>
+                    <uri>/input/enroll</uri>
+                    <resource>default_input_enroll</resource>
+                    <visible>0</visible>
+                </maint_enroll>
+                <maint_reltype>
+                    <label>Relationships</label>
+                    <title>Relationship type maintenance</title>
+                    <description>Amend the relationship types that you use</description>
+                    <id>m5-6</id>
+                    <uri>/input/reltype</uri>
+                    <resource>default_input_reltype</resource>
+                    <visible>0</visible>
+                </maint_reltype>
+                <maint_cat>
+                    <label>Categories</label>
+                    <title>Category maintenance</title>
+                    <description>Amend the categories that you assign members to</description>
+                    <id>m5-7</id>
+                    <uri>/input/cat</uri>
+                    <resource>default_input_cat</resource>
+                    <visible>0</visible>
+                </maint_cat>
+                <maint_user>
+                    <label>System Users</label>
+                    <title>System logon maintenance</title>
+                    <description>Control who can log on to your system</description>
+                    <id>m5-8</id>
+                    <uri>/input/user</uri>
+                    <resource>default_input_user</resource>
+                    <visible>0</visible>
+                </maint_user>
+                <maint_usg>
+                    <label>Usage</label>
+                    <title>Service usage maintenance</title>
+                    <description>Amend service usage records</description>
+                    <id>m5-9</id>
+                    <uri>/input/usg</uri>
+                    <resource>default_input_usg</resource>
+                    <visible>0</visible>
+                </maint_usg>
+                <maint_geo>
+                    <label>Geodata</label>
+                    <title>Address and location maintenance</title>
+                    <description>Edit the location data</description>
+                    <id>m5-10</id>
+                    <uri>/input/geo</uri>
+                    <resource>default_input_geo</resource>
+                    <visible>0</visible>
+                </maint_geo>
+                <maint_ovl>
+                    <label>Overlays</label>
+                    <title>Overlay management</title>
+                    <description>Order and edit overlay details</description>
+                    <id>m5-11</id>
+                    <uri>/input/ovl</uri>
+                    <resource>default_input_ovl</resource>
+                    <visible>0</visible>
+                </maint_ovl>
+                <maint_log>
+                    <label>Message Log</label>
+                    <title>System message log</title>
+                    <description>View system audit trail</description>
+                    <id>m5-12</id>
+                    <uri>/input/log</uri>
+                    <resource>default_input_log</resource>
+                    <visible>0</visible>
+                </maint_log>
+                <backup>
+                    <label>Data Backup</label>
+                    <title>Backup your data</title>
+                    <description>Create an archive of your data</description>
+                    <id>m5-13</id>
+                    <uri>/input/backup</uri>
+                    <resource>default_input_backup</resource>
+                    <visible>0</visible>
+                </backup>
+            </pages>
+        </maint>
+        <import>
+            <label>Import</label>
+            <uri>/import/index</uri>
+            <id>m6</id>
+            <resource>default_import_index</resource>
+            <title>Data import facility</title>
+            <keywords></keywords>
+            <description>Upload data into system</description>
+        </import>
+        <org>
+            <label>Organisations</label>
+            <uri>/input/org</uri>
+            <id>m7</id>
+            <resource>default_input_org</resource>
+            <title>System organisations</title>
+            <keywords></keywords>
+            <description>Amend system organisation details</description>
+        </org>
+		<!--<audit>
+			<label>Audit</label>
+			<uri></uri>
+			<id>m8</id>
+			<resource>audit</resource>
+			<title></title>
+			<keywords></keywords>
+			<description>View system audit trails</description>
+			<pages>
+				<actionMessages>
+					<label>Action Messages</label>
+					<uri>/audit/messages</uri>
+					<id>m8-1</id>
+					<resource>audit</resource>
+					<title></title>
+					<keywords></keywords>
+					<description></description>
+				</actionMessages>
+				<logons>
+					<label>Logons</label>
+					<uri>/audit/logons</uri>
+					<id>m8-2</id>
+					<resource>audit</resource>
+					<title></title>
+					<keywords></keywords>
+					<description></description>
+				</logons>
+				<ids>
+					<label>Security</label>
+					<uri>/audit/ids</uri>
+					<id>m8-3</id>
+					<resource>audit</resource>
+					<title></title>
+					<keywords></keywords>
+					<description></description>
+				</ids>
+			</pages>
+		</audit>-->
+        <my_account>
+            <label>My Account</label>
+            <id>m8</id>
+            <uri>/user/index</uri>
+            <resource>default_user_index</resource>
+            <title>My user account</title>
+            <keywords></keywords>
+            <description>Amend password and other personal information</description>
+        </my_account>
+        <enrollment>
+            <label>My Enrollments</label>
+            <id>m9</id>
+            <uri>/enroll/enroll</uri>
+            <resource>default_enroll_enroll</resource>
+            <title>Service enrollments</title>
+            <keywords></keywords>
+            <description>View and update service enrollment information</description>
+        </enrollment>
+        <nextid>
+            <label>Next Id</label>
+            <resource>default_info_nextid</resource>
+            <uri>/info/nextid</uri>
+            <id>m10</id>
+            <title>Get the next member id</title>
+            <keywords></keywords>
+            <description></description>
+        </nextid>
+    </main>
+</configdata>

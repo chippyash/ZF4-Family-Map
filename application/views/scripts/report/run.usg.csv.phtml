@@ -1,0 +1,24 @@
+<?php 
+//get interval headings
+$intervals = array();
+reset($this->data);
+$t = current($this->data);
+foreach ($t as $key=>$ival) {
+	$parts = explode('|',$key);
+	$intervals[$key] = $parts[1];
+}
+reset($this->data);
+
+echo "Service";
+foreach ($intervals as $interval) { 
+	echo ",{$interval}";
+	$interval = 0;
+}
+echo PHP_EOL;
+foreach ($this->data as $service=>$item) {
+	echo $service;
+	foreach ($intervals as $key=>$interval) {
+		echo ",{$item[$key]}";
+	}
+	echo PHP_EOL;
+}
