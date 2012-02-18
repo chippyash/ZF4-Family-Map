@@ -1,17 +1,55 @@
-Family Map represents a breakthrough for schools and colleges managing their services to end users, whether they be students or others.
+ZF4 Family Map - Introduction
+=============================
 
-Family Map allows you map your service users against geographic areas to determine whether you are complying with your funding requirements to provide services. The system comes with an easy to use click and go query dialog allowing you to select just the data you need.
+Family Map represents a breakthrough for schools and colleges managing their services to end users, whether they be 
+students or others.
 
-You maintain your own data securely and simply. Each authorised user has full access to only your data. The system logs all edit actions and logon attempts allowing you to track system usage.
+Family Map allows you map your service users against geographic areas to determine whether you are complying with 
+your funding requirements to provide services. The system comes with an easy to use click and go query dialog 
+allowing you to select just the data you need.
 
-The Reporting faclities are easy to use and let you get the information you want out of the system. You create reports in the same way that you use the mapping system and you can save your own report profiles for quick retrieval at a later time. Our smart software allows you to report on people that are within the geographic areas that you have defined for the map, giving you the ammunition you need to face the inspectors or better plan your services going forward.
+You maintain your own data securely and simply. Each authorised user has full access to only your data. The system 
+logs all edit actions and logon attempts allowing you to track system usage.
 
-Use the latest technology to gain a better understanding of the relationships between your members, pupils, staff, ancillaries and care workers. The fully interactive relationship map allows you to explore the links between people in the system in an intuitive fashion. The system allows you to define your own types of relationships and apply them only to the types of people that you specify.
+The Reporting faclities are easy to use and let you get the information you want out of the system. You create 
+reports in the same way that you use the mapping system and you can save your own report profiles for quick retrieval 
+at a later time. Our smart software allows you to report on people that are within the geographic areas that you 
+have defined for the map, giving you the ammunition you need to face the inspectors or better plan your services 
+going forward.
 
-To ease system usage, you can import your data into the system from spreadsheet files using the flexible import facilities
+Use the latest technology to gain a better understanding of the relationships between your members, pupils, staff, 
+ancillaries and care workers. The fully interactive relationship map allows you to explore the links between people 
+in the system in an intuitive fashion. The system allows you to define your own types of relationships and apply them 
+only to the types of people that you specify.
+
+To ease system usage, you can import your data into the system from spreadsheet files using the flexible import 
+facilities
 
 Check out some visuals at http://zf4.biz/info/fmlymap
 
 We are in the process of setting up a publicly available demonstration site.
 
-User documentation is already written, we just need to do some work to make it public.
+User documentation is already written, we just need to do some work to make it public. 
+
+Requirements
+------------
+LAMP stack web server
+The system comes with a cut down version of the industry standard Zend Framework library.  You may use this one or one 
+that is already installed on your server.  You can optionally choose to utilise the PHPIDS Intruder Detection System 
+software at a later time.
+
+Installation
+------------
+See docs/Install.txt
+
+Read more
+---------
+See docs/about.txt
+
+Want to help?
+-------------
+See docs/todo.txt
+
+License
+-------
+ZF4 Family Map is released under the GNU Affero General Public License V3
